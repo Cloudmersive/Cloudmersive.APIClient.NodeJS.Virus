@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/VirusScanResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('../model/VirusScanResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.ScanApi = factory(root.CloudmersiveVirusApiClient.ApiClient);
+    root.CloudmersiveVirusApiClient.ScanApi = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusScanResult);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, VirusScanResult) {
   'use strict';
 
   /**
    * Scan service.
    * @module api/ScanApi
-   * @version 1.0.9
+   * @version 1.1.0
    */
 
   /**
@@ -51,7 +51,7 @@
      * Callback function to receive the result of the scanFile operation.
      * @callback module:api/ScanApi~scanFileCallback
      * @param {String} error Error message, if any.
-     * @param {'Blob'} data The data returned by the service call.
+     * @param {module:model/VirusScanResult} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -59,7 +59,7 @@
      * Scan a file for viruses
      * @param {File} inputFile Input file to perform the operation on.
      * @param {module:api/ScanApi~scanFileCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'Blob'}
+     * data is of type: {@link module:model/VirusScanResult}
      */
     this.scanFile = function(inputFile, callback) {
       var postBody = null;
@@ -85,7 +85,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
-      var returnType = 'Blob';
+      var returnType = VirusScanResult;
 
       return this.apiClient.callApi(
         '/virus/scan/file', 'POST',
