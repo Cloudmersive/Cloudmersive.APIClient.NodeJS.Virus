@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="scanFile"></a>
 # **scanFile**
-> VirusScanResult scanFile(inputFile)
+> &#39;Blob&#39; scanFile(inputFile)
 
 Scan a file for viruses
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VirusScanResult**](VirusScanResult.md)
+**&#39;Blob&#39;**
 
 ### Authorization
 
