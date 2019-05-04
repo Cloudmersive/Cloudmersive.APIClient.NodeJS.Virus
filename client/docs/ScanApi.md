@@ -5,6 +5,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**scanFile**](ScanApi.md#scanFile) | **POST** /virus/scan/file | Scan a file for viruses
+[**scanWebsite**](ScanApi.md#scanWebsite) | **POST** /virus/scan/website | Scan a website for malicious content including viruses and threats (including Phishing)
 
 
 <a name="scanFile"></a>
@@ -56,5 +57,56 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+<a name="scanWebsite"></a>
+# **scanWebsite**
+> WebsiteScanResult scanWebsite(input)
+
+Scan a website for malicious content including viruses and threats (including Phishing)
+
+### Example
+```javascript
+var CloudmersiveVirusApiClient = require('cloudmersive-virus-api-client');
+var defaultClient = CloudmersiveVirusApiClient.ApiClient.instance;
+
+// Configure API key authorization: Apikey
+var Apikey = defaultClient.authentications['Apikey'];
+Apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Apikey.apiKeyPrefix = 'Token';
+
+var apiInstance = new CloudmersiveVirusApiClient.ScanApi();
+
+var input = new CloudmersiveVirusApiClient.WebsiteScanRequest(); // WebsiteScanRequest | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.scanWebsite(input, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**WebsiteScanRequest**](WebsiteScanRequest.md)|  | 
+
+### Return type
+
+[**WebsiteScanResult**](WebsiteScanResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 

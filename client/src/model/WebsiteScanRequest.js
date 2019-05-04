@@ -25,7 +25,7 @@
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.VirusFound = factory(root.CloudmersiveVirusApiClient.ApiClient);
+    root.CloudmersiveVirusApiClient.WebsiteScanRequest = factory(root.CloudmersiveVirusApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,55 +34,46 @@
 
 
   /**
-   * The VirusFound model module.
-   * @module model/VirusFound
+   * The WebsiteScanRequest model module.
+   * @module model/WebsiteScanRequest
    * @version 1.1.3
    */
 
   /**
-   * Constructs a new <code>VirusFound</code>.
-   * Virus positively identified
-   * @alias module:model/VirusFound
+   * Constructs a new <code>WebsiteScanRequest</code>.
+   * Request to scan a website for malicious content
+   * @alias module:model/WebsiteScanRequest
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>VirusFound</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>WebsiteScanRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/VirusFound} obj Optional instance to populate.
-   * @return {module:model/VirusFound} The populated <code>VirusFound</code> instance.
+   * @param {module:model/WebsiteScanRequest} obj Optional instance to populate.
+   * @return {module:model/WebsiteScanRequest} The populated <code>WebsiteScanRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('FileName')) {
-        obj['FileName'] = ApiClient.convertToType(data['FileName'], 'String');
-      }
-      if (data.hasOwnProperty('VirusName')) {
-        obj['VirusName'] = ApiClient.convertToType(data['VirusName'], 'String');
+      if (data.hasOwnProperty('Url')) {
+        obj['Url'] = ApiClient.convertToType(data['Url'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * Name of the file containing the virus
-   * @member {String} FileName
+   * URL of the website to scan; should begin with http:// or https://
+   * @member {String} Url
    */
-  exports.prototype['FileName'] = undefined;
-  /**
-   * Name of the virus that was found
-   * @member {String} VirusName
-   */
-  exports.prototype['VirusName'] = undefined;
+  exports.prototype['Url'] = undefined;
 
 
 

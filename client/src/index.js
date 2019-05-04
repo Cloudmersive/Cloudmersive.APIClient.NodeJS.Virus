@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VirusFound', 'model/VirusScanResult', 'api/ScanApi'], factory);
+    define(['ApiClient', 'model/VirusFound', 'model/VirusScanResult', 'model/WebsiteScanRequest', 'model/WebsiteScanResult', 'api/ScanApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/VirusFound'), require('./model/VirusScanResult'), require('./api/ScanApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/VirusFound'), require('./model/VirusScanResult'), require('./model/WebsiteScanRequest'), require('./model/WebsiteScanResult'), require('./api/ScanApi'));
   }
-}(function(ApiClient, VirusFound, VirusScanResult, ScanApi) {
+}(function(ApiClient, VirusFound, VirusScanResult, WebsiteScanRequest, WebsiteScanResult, ScanApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.1.2
+   * @version 1.1.3
    */
   var exports = {
     /**
@@ -71,6 +71,16 @@
      * @property {module:model/VirusScanResult}
      */
     VirusScanResult: VirusScanResult,
+    /**
+     * The WebsiteScanRequest model constructor.
+     * @property {module:model/WebsiteScanRequest}
+     */
+    WebsiteScanRequest: WebsiteScanRequest,
+    /**
+     * The WebsiteScanResult model constructor.
+     * @property {module:model/WebsiteScanResult}
+     */
+    WebsiteScanResult: WebsiteScanResult,
     /**
      * The ScanApi service constructor.
      * @property {module:api/ScanApi}

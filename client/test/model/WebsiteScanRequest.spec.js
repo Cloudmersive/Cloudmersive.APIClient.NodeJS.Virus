@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveVirusApiClient.ScanApi();
+    instance = new CloudmersiveVirusApiClient.WebsiteScanRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,27 +49,19 @@
       object[property] = value;
   }
 
-  describe('ScanApi', function() {
-    describe('scanFile', function() {
-      it('should call scanFile successfully', function(done) {
-        //uncomment below and update the code to test scanFile
-        //instance.scanFile(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('WebsiteScanRequest', function() {
+    it('should create an instance of WebsiteScanRequest', function() {
+      // uncomment below and update the code to test WebsiteScanRequest
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanRequest();
+      //expect(instance).to.be.a(CloudmersiveVirusApiClient.WebsiteScanRequest);
     });
-    describe('scanWebsite', function() {
-      it('should call scanWebsite successfully', function(done) {
-        //uncomment below and update the code to test scanWebsite
-        //instance.scanWebsite(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property url (base name: "Url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanRequest();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

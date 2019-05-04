@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VirusScanResult'], factory);
+    define(['ApiClient', 'model/VirusScanResult', 'model/WebsiteScanRequest', 'model/WebsiteScanResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/VirusScanResult'));
+    module.exports = factory(require('../ApiClient'), require('../model/VirusScanResult'), require('../model/WebsiteScanRequest'), require('../model/WebsiteScanResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.ScanApi = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusScanResult);
+    root.CloudmersiveVirusApiClient.ScanApi = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusScanResult, root.CloudmersiveVirusApiClient.WebsiteScanRequest, root.CloudmersiveVirusApiClient.WebsiteScanResult);
   }
-}(this, function(ApiClient, VirusScanResult) {
+}(this, function(ApiClient, VirusScanResult, WebsiteScanRequest, WebsiteScanResult) {
   'use strict';
 
   /**
    * Scan service.
    * @module api/ScanApi
-   * @version 1.1.2
+   * @version 1.1.3
    */
 
   /**
@@ -89,6 +89,52 @@
 
       return this.apiClient.callApi(
         '/virus/scan/file', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the scanWebsite operation.
+     * @callback module:api/ScanApi~scanWebsiteCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WebsiteScanResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Scan a website for malicious content including viruses and threats (including Phishing)
+     * @param {module:model/WebsiteScanRequest} input 
+     * @param {module:api/ScanApi~scanWebsiteCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WebsiteScanResult}
+     */
+    this.scanWebsite = function(input, callback) {
+      var postBody = input;
+
+      // verify the required parameter 'input' is set
+      if (input === undefined || input === null) {
+        throw new Error("Missing the required parameter 'input' when calling scanWebsite");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = WebsiteScanResult;
+
+      return this.apiClient.callApi(
+        '/virus/scan/website', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

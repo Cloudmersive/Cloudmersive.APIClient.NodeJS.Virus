@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveVirusApiClient.ScanApi();
+    instance = new CloudmersiveVirusApiClient.WebsiteScanResult();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,27 +49,25 @@
       object[property] = value;
   }
 
-  describe('ScanApi', function() {
-    describe('scanFile', function() {
-      it('should call scanFile successfully', function(done) {
-        //uncomment below and update the code to test scanFile
-        //instance.scanFile(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('WebsiteScanResult', function() {
+    it('should create an instance of WebsiteScanResult', function() {
+      // uncomment below and update the code to test WebsiteScanResult
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanResult();
+      //expect(instance).to.be.a(CloudmersiveVirusApiClient.WebsiteScanResult);
     });
-    describe('scanWebsite', function() {
-      it('should call scanWebsite successfully', function(done) {
-        //uncomment below and update the code to test scanWebsite
-        //instance.scanWebsite(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property cleanResult (base name: "CleanResult")', function() {
+      // uncomment below and update the code to test the property cleanResult
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanResult();
+      //expect(instance).to.be();
     });
+
+    it('should have the property websiteThreatType (base name: "WebsiteThreatType")', function() {
+      // uncomment below and update the code to test the property websiteThreatType
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
