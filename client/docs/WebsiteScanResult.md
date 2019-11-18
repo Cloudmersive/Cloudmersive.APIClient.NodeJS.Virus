@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 
 * `ForcedDownload` (value: `"ForcedDownload"`)
 
+* `UnableToConnect` (value: `"UnableToConnect"`)
+
 
 
 
