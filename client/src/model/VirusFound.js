@@ -36,7 +36,7 @@
   /**
    * The VirusFound model module.
    * @module model/VirusFound
-   * @version 1.1.4
+   * @version 1.1.5
    */
 
   /**

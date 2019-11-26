@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/VirusFound'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./VirusFound'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.WebsiteScanResult = factory(root.CloudmersiveVirusApiClient.ApiClient);
+    root.CloudmersiveVirusApiClient.WebsiteScanResult = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusFound);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, VirusFound) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The WebsiteScanResult model module.
    * @module model/WebsiteScanResult
-   * @version 1.1.4
+   * @version 1.1.5
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('WebsiteThreatType')) {
         obj['WebsiteThreatType'] = ApiClient.convertToType(data['WebsiteThreatType'], 'String');
       }
+      if (data.hasOwnProperty('FoundViruses')) {
+        obj['FoundViruses'] = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
+      }
     }
     return obj;
   }
@@ -83,6 +87,11 @@
    * @member {module:model/WebsiteScanResult.WebsiteThreatTypeEnum} WebsiteThreatType
    */
   exports.prototype['WebsiteThreatType'] = undefined;
+  /**
+   * Array of viruses found, if any
+   * @member {Array.<module:model/VirusFound>} FoundViruses
+   */
+  exports.prototype['FoundViruses'] = undefined;
 
 
   /**

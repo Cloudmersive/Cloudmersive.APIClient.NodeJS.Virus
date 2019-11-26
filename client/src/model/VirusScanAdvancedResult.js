@@ -36,7 +36,7 @@
   /**
    * The VirusScanAdvancedResult model module.
    * @module model/VirusScanAdvancedResult
-   * @version 1.1.4
+   * @version 1.1.5
    */
 
   /**
