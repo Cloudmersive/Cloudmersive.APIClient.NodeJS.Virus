@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property websiteHttpResponseCode (base name: "WebsiteHttpResponseCode")', function() {
+      // uncomment below and update the code to test the property websiteHttpResponseCode
+      //var instane = new CloudmersiveVirusApiClient.WebsiteScanResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

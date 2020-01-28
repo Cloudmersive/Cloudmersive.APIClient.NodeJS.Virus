@@ -36,7 +36,7 @@
   /**
    * The WebsiteScanResult model module.
    * @module model/WebsiteScanResult
-   * @version 1.1.5
+   * @version 1.1.6
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('FoundViruses')) {
         obj['FoundViruses'] = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
       }
+      if (data.hasOwnProperty('WebsiteHttpResponseCode')) {
+        obj['WebsiteHttpResponseCode'] = ApiClient.convertToType(data['WebsiteHttpResponseCode'], 'Number');
+      }
     }
     return obj;
   }
@@ -92,6 +96,11 @@
    * @member {Array.<module:model/VirusFound>} FoundViruses
    */
   exports.prototype['FoundViruses'] = undefined;
+  /**
+   * The remote server URL HTTP reasponse code; useful for debugging issues with scanning; typically if the remote server returns a 200 or 300-series code this means a successful response, while a 400 or 500 series code would represent an error returned from the remote server for the provided URL.
+   * @member {Number} WebsiteHttpResponseCode
+   */
+  exports.prototype['WebsiteHttpResponseCode'] = undefined;
 
 
   /**
