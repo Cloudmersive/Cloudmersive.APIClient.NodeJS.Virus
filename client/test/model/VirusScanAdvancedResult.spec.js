@@ -80,6 +80,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsPasswordProtectedFile (base name: "ContainsPasswordProtectedFile")', function() {
+      // uncomment below and update the code to test the property containsPasswordProtectedFile
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
     it('should have the property containsRestrictedFileFormat (base name: "ContainsRestrictedFileFormat")', function() {
       // uncomment below and update the code to test the property containsRestrictedFileFormat
       //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();

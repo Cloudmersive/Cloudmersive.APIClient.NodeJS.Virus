@@ -36,7 +36,7 @@
   /**
    * The VirusScanAdvancedResult model module.
    * @module model/VirusScanAdvancedResult
-   * @version 1.1.6
+   * @version 1.1.7
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('ContainsScript')) {
         obj['ContainsScript'] = ApiClient.convertToType(data['ContainsScript'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsPasswordProtectedFile')) {
+        obj['ContainsPasswordProtectedFile'] = ApiClient.convertToType(data['ContainsPasswordProtectedFile'], 'Boolean');
       }
       if (data.hasOwnProperty('ContainsRestrictedFileFormat')) {
         obj['ContainsRestrictedFileFormat'] = ApiClient.convertToType(data['ContainsRestrictedFileFormat'], 'Boolean');
@@ -113,6 +117,11 @@
    * @member {Boolean} ContainsScript
    */
   exports.prototype['ContainsScript'] = undefined;
+  /**
+   * True if the scan contained a password protected or encrypted file, which can be a significant risk factor
+   * @member {Boolean} ContainsPasswordProtectedFile
+   */
+  exports.prototype['ContainsPasswordProtectedFile'] = undefined;
   /**
    * True if the uploaded file is of a type that is not allowed based on the optional restrictFileTypes parameter, false otherwise; if restrictFileTypes is not set, this will always be false
    * @member {Boolean} ContainsRestrictedFileFormat
