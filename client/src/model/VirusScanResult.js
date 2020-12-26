@@ -36,7 +36,7 @@
   /**
    * The VirusScanResult model module.
    * @module model/VirusScanResult
-   * @version 1.1.8
+   * @version 1.1.9
    */
 
   /**
