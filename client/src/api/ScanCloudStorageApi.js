@@ -33,7 +33,7 @@
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.1.9
+   * @version 1.2.0
    */
 
   /**
