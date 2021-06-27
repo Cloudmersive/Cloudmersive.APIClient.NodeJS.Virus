@@ -60,6 +60,16 @@
         done();
       });
     });
+    describe('scanCloudStorageScanAwsS3FileAdvanced', function() {
+      it('should call scanCloudStorageScanAwsS3FileAdvanced successfully', function(done) {
+        //uncomment below and update the code to test scanCloudStorageScanAwsS3FileAdvanced
+        //instance.scanCloudStorageScanAwsS3FileAdvanced(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('scanCloudStorageScanAzureBlob', function() {
       it('should call scanCloudStorageScanAzureBlob successfully', function(done) {
         //uncomment below and update the code to test scanCloudStorageScanAzureBlob
@@ -70,10 +80,30 @@
         done();
       });
     });
+    describe('scanCloudStorageScanAzureBlobAdvanced', function() {
+      it('should call scanCloudStorageScanAzureBlobAdvanced successfully', function(done) {
+        //uncomment below and update the code to test scanCloudStorageScanAzureBlobAdvanced
+        //instance.scanCloudStorageScanAzureBlobAdvanced(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('scanCloudStorageScanGcpStorageFile', function() {
       it('should call scanCloudStorageScanGcpStorageFile successfully', function(done) {
         //uncomment below and update the code to test scanCloudStorageScanGcpStorageFile
         //instance.scanCloudStorageScanGcpStorageFile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scanCloudStorageScanGcpStorageFileAdvanced', function() {
+      it('should call scanCloudStorageScanGcpStorageFileAdvanced successfully', function(done) {
+        //uncomment below and update the code to test scanCloudStorageScanGcpStorageFileAdvanced
+        //instance.scanCloudStorageScanGcpStorageFileAdvanced(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

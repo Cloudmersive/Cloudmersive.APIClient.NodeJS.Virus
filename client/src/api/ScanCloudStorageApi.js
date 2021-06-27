@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CloudStorageVirusScanResult'], factory);
+    define(['ApiClient', 'model/CloudStorageAdvancedVirusScanResult', 'model/CloudStorageVirusScanResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CloudStorageVirusScanResult'));
+    module.exports = factory(require('../ApiClient'), require('../model/CloudStorageAdvancedVirusScanResult'), require('../model/CloudStorageVirusScanResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.ScanCloudStorageApi = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.CloudStorageVirusScanResult);
+    root.CloudmersiveVirusApiClient.ScanCloudStorageApi = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.CloudStorageAdvancedVirusScanResult, root.CloudmersiveVirusApiClient.CloudStorageVirusScanResult);
   }
-}(this, function(ApiClient, CloudStorageVirusScanResult) {
+}(this, function(ApiClient, CloudStorageAdvancedVirusScanResult, CloudStorageVirusScanResult) {
   'use strict';
 
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.2.0
+   * @version 1.2.1
    */
 
   /**
@@ -124,6 +124,96 @@
     }
 
     /**
+     * Callback function to receive the result of the scanCloudStorageScanAwsS3FileAdvanced operation.
+     * @callback module:api/ScanCloudStorageApi~scanCloudStorageScanAwsS3FileAdvancedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CloudStorageAdvancedVirusScanResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Advanced Scan an AWS S3 file for viruses
+     * Advanced Scan the contents of a single AWS S3 file and its content for viruses and threats. Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param {String} accessKey AWS S3 access key for the S3 bucket; you can get this from My Security Credentials in the AWS console
+     * @param {String} secretKey AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console
+     * @param {String} bucketRegion Name of the region of the S3 bucket, such as &#39;US-East-1&#39;
+     * @param {String} bucketName Name of the S3 bucket
+     * @param {String} keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
+     * @param {Boolean} opts.allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
+     * @param {Boolean} opts.allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
+     * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanAwsS3FileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
+     */
+    this.scanCloudStorageScanAwsS3FileAdvanced = function(accessKey, secretKey, bucketRegion, bucketName, keyName, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'accessKey' is set
+      if (accessKey === undefined || accessKey === null) {
+        throw new Error("Missing the required parameter 'accessKey' when calling scanCloudStorageScanAwsS3FileAdvanced");
+      }
+
+      // verify the required parameter 'secretKey' is set
+      if (secretKey === undefined || secretKey === null) {
+        throw new Error("Missing the required parameter 'secretKey' when calling scanCloudStorageScanAwsS3FileAdvanced");
+      }
+
+      // verify the required parameter 'bucketRegion' is set
+      if (bucketRegion === undefined || bucketRegion === null) {
+        throw new Error("Missing the required parameter 'bucketRegion' when calling scanCloudStorageScanAwsS3FileAdvanced");
+      }
+
+      // verify the required parameter 'bucketName' is set
+      if (bucketName === undefined || bucketName === null) {
+        throw new Error("Missing the required parameter 'bucketName' when calling scanCloudStorageScanAwsS3FileAdvanced");
+      }
+
+      // verify the required parameter 'keyName' is set
+      if (keyName === undefined || keyName === null) {
+        throw new Error("Missing the required parameter 'keyName' when calling scanCloudStorageScanAwsS3FileAdvanced");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'accessKey': accessKey,
+        'secretKey': secretKey,
+        'bucketRegion': bucketRegion,
+        'bucketName': bucketName,
+        'keyName': keyName,
+        'allowExecutables': opts['allowExecutables'],
+        'allowInvalidFiles': opts['allowInvalidFiles'],
+        'allowScripts': opts['allowScripts'],
+        'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
+        'allowMacros': opts['allowMacros'],
+        'restrictFileTypes': opts['restrictFileTypes']
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = CloudStorageAdvancedVirusScanResult;
+
+      return this.apiClient.callApi(
+        '/virus/scan/cloud-storage/aws-s3/single/advanced', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the scanCloudStorageScanAzureBlob operation.
      * @callback module:api/ScanCloudStorageApi~scanCloudStorageScanAzureBlobCallback
      * @param {String} error Error message, if any.
@@ -186,6 +276,82 @@
     }
 
     /**
+     * Callback function to receive the result of the scanCloudStorageScanAzureBlobAdvanced operation.
+     * @callback module:api/ScanCloudStorageApi~scanCloudStorageScanAzureBlobAdvancedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CloudStorageAdvancedVirusScanResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Advanced Scan an Azure Blob for viruses
+     * Advanced Scan the contents of a single Azure Blob and its content for viruses and threats.  Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param {String} connectionString Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal.
+     * @param {String} containerName Name of the Blob container within the Azure Blob Storage account
+     * @param {String} blobPath Path to the blob within the container, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39;
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
+     * @param {Boolean} opts.allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
+     * @param {Boolean} opts.allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
+     * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanAzureBlobAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
+     */
+    this.scanCloudStorageScanAzureBlobAdvanced = function(connectionString, containerName, blobPath, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'connectionString' is set
+      if (connectionString === undefined || connectionString === null) {
+        throw new Error("Missing the required parameter 'connectionString' when calling scanCloudStorageScanAzureBlobAdvanced");
+      }
+
+      // verify the required parameter 'containerName' is set
+      if (containerName === undefined || containerName === null) {
+        throw new Error("Missing the required parameter 'containerName' when calling scanCloudStorageScanAzureBlobAdvanced");
+      }
+
+      // verify the required parameter 'blobPath' is set
+      if (blobPath === undefined || blobPath === null) {
+        throw new Error("Missing the required parameter 'blobPath' when calling scanCloudStorageScanAzureBlobAdvanced");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'connectionString': connectionString,
+        'containerName': containerName,
+        'blobPath': blobPath,
+        'allowExecutables': opts['allowExecutables'],
+        'allowInvalidFiles': opts['allowInvalidFiles'],
+        'allowScripts': opts['allowScripts'],
+        'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
+        'allowMacros': opts['allowMacros'],
+        'restrictFileTypes': opts['restrictFileTypes']
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = CloudStorageAdvancedVirusScanResult;
+
+      return this.apiClient.callApi(
+        '/virus/scan/cloud-storage/azure-blob/single/advanced', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the scanCloudStorageScanGcpStorageFile operation.
      * @callback module:api/ScanCloudStorageApi~scanCloudStorageScanGcpStorageFileCallback
      * @param {String} error Error message, if any.
@@ -242,6 +408,82 @@
 
       return this.apiClient.callApi(
         '/virus/scan/cloud-storage/gcp-storage/single', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the scanCloudStorageScanGcpStorageFileAdvanced operation.
+     * @callback module:api/ScanCloudStorageApi~scanCloudStorageScanGcpStorageFileAdvancedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CloudStorageAdvancedVirusScanResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Advanced Scan an Google Cloud Platform (GCP) Storage file for viruses
+     * Advanced Scan the contents of a single Google Cloud Platform (GCP) Storage file and its content for viruses and threats. Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param {String} bucketName Name of the bucket in Google Cloud Storage
+     * @param {String} objectName Name of the object or file in Google Cloud Storage
+     * @param {File} jsonCredentialFile Service Account credential for Google Cloud stored in a JSON file.
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
+     * @param {Boolean} opts.allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
+     * @param {Boolean} opts.allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
+     * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanGcpStorageFileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
+     */
+    this.scanCloudStorageScanGcpStorageFileAdvanced = function(bucketName, objectName, jsonCredentialFile, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'bucketName' is set
+      if (bucketName === undefined || bucketName === null) {
+        throw new Error("Missing the required parameter 'bucketName' when calling scanCloudStorageScanGcpStorageFileAdvanced");
+      }
+
+      // verify the required parameter 'objectName' is set
+      if (objectName === undefined || objectName === null) {
+        throw new Error("Missing the required parameter 'objectName' when calling scanCloudStorageScanGcpStorageFileAdvanced");
+      }
+
+      // verify the required parameter 'jsonCredentialFile' is set
+      if (jsonCredentialFile === undefined || jsonCredentialFile === null) {
+        throw new Error("Missing the required parameter 'jsonCredentialFile' when calling scanCloudStorageScanGcpStorageFileAdvanced");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'bucketName': bucketName,
+        'objectName': objectName,
+        'allowExecutables': opts['allowExecutables'],
+        'allowInvalidFiles': opts['allowInvalidFiles'],
+        'allowScripts': opts['allowScripts'],
+        'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
+        'allowMacros': opts['allowMacros'],
+        'restrictFileTypes': opts['restrictFileTypes']
+      };
+      var formParams = {
+        'jsonCredentialFile': jsonCredentialFile
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = CloudStorageAdvancedVirusScanResult;
+
+      return this.apiClient.callApi(
+        '/virus/scan/cloud-storage/gcp-storage/single/advanced', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

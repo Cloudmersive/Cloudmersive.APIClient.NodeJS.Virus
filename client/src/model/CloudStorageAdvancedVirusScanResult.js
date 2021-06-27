@@ -16,33 +16,33 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VirusFound'], factory);
+    define(['ApiClient', 'model/CloudStorageVirusFound'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VirusFound'));
+    module.exports = factory(require('../ApiClient'), require('./CloudStorageVirusFound'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.VirusScanAdvancedResult = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusFound);
+    root.CloudmersiveVirusApiClient.CloudStorageAdvancedVirusScanResult = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.CloudStorageVirusFound);
   }
-}(this, function(ApiClient, VirusFound) {
+}(this, function(ApiClient, CloudStorageVirusFound) {
   'use strict';
 
 
 
 
   /**
-   * The VirusScanAdvancedResult model module.
-   * @module model/VirusScanAdvancedResult
+   * The CloudStorageAdvancedVirusScanResult model module.
+   * @module model/CloudStorageAdvancedVirusScanResult
    * @version 1.2.1
    */
 
   /**
-   * Constructs a new <code>VirusScanAdvancedResult</code>.
-   * Result of running an advanced virus scan
-   * @alias module:model/VirusScanAdvancedResult
+   * Constructs a new <code>CloudStorageAdvancedVirusScanResult</code>.
+   * Result of running an advanced virus scan on cloud storage
+   * @alias module:model/CloudStorageAdvancedVirusScanResult
    * @class
    */
   var exports = function() {
@@ -57,19 +57,25 @@
 
 
 
+
+
+
   };
 
   /**
-   * Constructs a <code>VirusScanAdvancedResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>CloudStorageAdvancedVirusScanResult</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/VirusScanAdvancedResult} obj Optional instance to populate.
-   * @return {module:model/VirusScanAdvancedResult} The populated <code>VirusScanAdvancedResult</code> instance.
+   * @param {module:model/CloudStorageAdvancedVirusScanResult} obj Optional instance to populate.
+   * @return {module:model/CloudStorageAdvancedVirusScanResult} The populated <code>CloudStorageAdvancedVirusScanResult</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('Successful')) {
+        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
+      }
       if (data.hasOwnProperty('CleanResult')) {
         obj['CleanResult'] = ApiClient.convertToType(data['CleanResult'], 'Boolean');
       }
@@ -95,12 +101,23 @@
         obj['VerifiedFileFormat'] = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
       }
       if (data.hasOwnProperty('FoundViruses')) {
-        obj['FoundViruses'] = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
+        obj['FoundViruses'] = ApiClient.convertToType(data['FoundViruses'], [CloudStorageVirusFound]);
+      }
+      if (data.hasOwnProperty('ErrorDetailedDescription')) {
+        obj['ErrorDetailedDescription'] = ApiClient.convertToType(data['ErrorDetailedDescription'], 'String');
+      }
+      if (data.hasOwnProperty('FileSize')) {
+        obj['FileSize'] = ApiClient.convertToType(data['FileSize'], 'Number');
       }
     }
     return obj;
   }
 
+  /**
+   * True if the operation of retrieving the file, and scanning it were successfully completed, false if the file could not be downloaded from cloud storage, or if the file could not be scanned.  Note that successful completion does not mean the file is clean; for the output of the virus scanning operation itself, use the CleanResult and FoundViruses parameters.
+   * @member {Boolean} Successful
+   */
+  exports.prototype['Successful'] = undefined;
   /**
    * True if the scan contained no viruses, false otherwise
    * @member {Boolean} CleanResult
@@ -143,9 +160,19 @@
   exports.prototype['VerifiedFileFormat'] = undefined;
   /**
    * Array of viruses found, if any
-   * @member {Array.<module:model/VirusFound>} FoundViruses
+   * @member {Array.<module:model/CloudStorageVirusFound>} FoundViruses
    */
   exports.prototype['FoundViruses'] = undefined;
+  /**
+   * Detailed error message if the operation was not successful
+   * @member {String} ErrorDetailedDescription
+   */
+  exports.prototype['ErrorDetailedDescription'] = undefined;
+  /**
+   * Size in bytes of the file that was retrieved and scanned
+   * @member {Number} FileSize
+   */
+  exports.prototype['FileSize'] = undefined;
 
 
 
