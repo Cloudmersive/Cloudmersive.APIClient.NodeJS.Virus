@@ -98,6 +98,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsXmlExternalEntities (base name: "ContainsXmlExternalEntities")', function() {
+      // uncomment below and update the code to test the property containsXmlExternalEntities
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verifiedFileFormat (base name: "VerifiedFileFormat")', function() {
       // uncomment below and update the code to test the property verifiedFileFormat
       //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();

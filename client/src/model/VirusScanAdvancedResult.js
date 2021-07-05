@@ -36,7 +36,7 @@
   /**
    * The VirusScanAdvancedResult model module.
    * @module model/VirusScanAdvancedResult
-   * @version 1.2.1
+   * @version 1.2.2
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -90,6 +91,9 @@
       }
       if (data.hasOwnProperty('ContainsMacros')) {
         obj['ContainsMacros'] = ApiClient.convertToType(data['ContainsMacros'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsXmlExternalEntities')) {
+        obj['ContainsXmlExternalEntities'] = ApiClient.convertToType(data['ContainsXmlExternalEntities'], 'Boolean');
       }
       if (data.hasOwnProperty('VerifiedFileFormat')) {
         obj['VerifiedFileFormat'] = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
@@ -136,6 +140,11 @@
    * @member {Boolean} ContainsMacros
    */
   exports.prototype['ContainsMacros'] = undefined;
+  /**
+   * True if the uploaded file contains embedded XML External Entity threats of other embedded threats within the document, which can be a significant risk factor
+   * @member {Boolean} ContainsXmlExternalEntities
+   */
+  exports.prototype['ContainsXmlExternalEntities'] = undefined;
   /**
    * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
    * @member {String} VerifiedFileFormat
