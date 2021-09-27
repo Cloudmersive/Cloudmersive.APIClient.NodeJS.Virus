@@ -110,6 +110,26 @@
         done();
       });
     });
+    describe('scanCloudStorageScanSharePointOnlineFile', function() {
+      it('should call scanCloudStorageScanSharePointOnlineFile successfully', function(done) {
+        //uncomment below and update the code to test scanCloudStorageScanSharePointOnlineFile
+        //instance.scanCloudStorageScanSharePointOnlineFile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('scanCloudStorageScanSharePointOnlineFileAdvanced', function() {
+      it('should call scanCloudStorageScanSharePointOnlineFileAdvanced successfully', function(done) {
+        //uncomment below and update the code to test scanCloudStorageScanSharePointOnlineFileAdvanced
+        //instance.scanCloudStorageScanSharePointOnlineFileAdvanced(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

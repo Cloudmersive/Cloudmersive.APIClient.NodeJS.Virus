@@ -36,7 +36,7 @@
   /**
    * The CloudStorageVirusScanResult model module.
    * @module model/CloudStorageVirusScanResult
-   * @version 1.2.2
+   * @version 1.2.3
    */
 
   /**
