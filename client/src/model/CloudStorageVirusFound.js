@@ -36,7 +36,7 @@
   /**
    * The CloudStorageVirusFound model module.
    * @module model/CloudStorageVirusFound
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**

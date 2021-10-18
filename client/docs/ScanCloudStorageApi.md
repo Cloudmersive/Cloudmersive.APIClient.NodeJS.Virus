@@ -460,7 +460,8 @@ var siteID = "siteID_example"; // String | Site ID (GUID) of the SharePoint site
 var filePath = "filePath_example"; // String | Path to the file within the drive, such as 'hello.pdf' or '/folder/subfolder/world.pdf'
 
 var opts = { 
-  'tenantID': "tenantID_example" // String | Optional; Tenant ID of your Azure Active Directory
+  'tenantID': "tenantID_example", // String | Optional; Tenant ID of your Azure Active Directory
+  'itemID': "itemID_example" // String | SharePoint itemID, such as a DriveItem Id
 };
 
 var callback = function(error, data, response) {
@@ -483,6 +484,7 @@ Name | Type | Description  | Notes
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from | 
  **filePath** | **String**| Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39; | 
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional] 
+ **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional] 
 
 ### Return type
 
@@ -499,7 +501,7 @@ Name | Type | Description  | Notes
 
 <a name="scanCloudStorageScanSharePointOnlineFileAdvanced"></a>
 # **scanCloudStorageScanSharePointOnlineFileAdvanced**
-> CloudStorageAdvancedVirusScanResult scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, filePath, opts)
+> CloudStorageAdvancedVirusScanResult scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, opts)
 
 Advanced Virus Scan a file in a SharePoint Online Site Drive
 
@@ -526,10 +528,10 @@ var sharepointDomainName = "sharepointDomainName_example"; // String | SharePoin
 
 var siteID = "siteID_example"; // String | Site ID (GUID) of the SharePoint site you wish to retrieve the file from
 
-var filePath = "filePath_example"; // String | Path to the file within the drive, such as 'hello.pdf' or '/folder/subfolder/world.pdf'
-
 var opts = { 
   'tenantID': "tenantID_example", // String | Optional; Tenant ID of your Azure Active Directory
+  'filePath': "filePath_example", // String | Path to the file within the drive, such as 'hello.pdf' or '/folder/subfolder/world.pdf'
+  'itemID': "itemID_example", // String | SharePoint itemID, such as a DriveItem Id
   'allowExecutables': true, // Boolean | Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
   'allowInvalidFiles': true, // Boolean | Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
   'allowScripts': true, // Boolean | Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
@@ -546,7 +548,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, filePath, opts, callback);
+apiInstance.scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, opts, callback);
 ```
 
 ### Parameters
@@ -557,8 +559,9 @@ Name | Type | Description  | Notes
  **clientSecret** | **String**| Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal | 
  **sharepointDomainName** | **String**| SharePoint Online domain name, such as mydomain.sharepoint.com | 
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from | 
- **filePath** | **String**| Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39; | 
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional] 
+ **filePath** | **String**| Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39; | [optional] 
+ **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional] 
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional] 
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional] 
  **allowScripts** | **Boolean**| Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). | [optional] 

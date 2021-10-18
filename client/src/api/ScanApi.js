@@ -33,7 +33,7 @@
   /**
    * Scan service.
    * @module api/ScanApi
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**

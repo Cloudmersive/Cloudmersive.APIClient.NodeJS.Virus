@@ -33,7 +33,7 @@
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.2.3
+   * @version 1.2.4
    */
 
   /**
@@ -513,6 +513,7 @@
      * @param {String} filePath Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.tenantID Optional; Tenant ID of your Azure Active Directory
+     * @param {String} opts.itemID SharePoint itemID, such as a DriveItem Id
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanSharePointOnlineFileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageVirusScanResult}
      */
@@ -558,7 +559,8 @@
         'sharepointDomainName': sharepointDomainName,
         'siteID': siteID,
         'tenantID': opts['tenantID'],
-        'filePath': filePath
+        'filePath': filePath,
+        'itemID': opts['itemID']
       };
       var formParams = {
       };
@@ -590,9 +592,10 @@
      * @param {String} clientSecret Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal
      * @param {String} sharepointDomainName SharePoint Online domain name, such as mydomain.sharepoint.com
      * @param {String} siteID Site ID (GUID) of the SharePoint site you wish to retrieve the file from
-     * @param {String} filePath Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.tenantID Optional; Tenant ID of your Azure Active Directory
+     * @param {String} opts.filePath Path to the file within the drive, such as &#39;hello.pdf&#39; or &#39;/folder/subfolder/world.pdf&#39;
+     * @param {String} opts.itemID SharePoint itemID, such as a DriveItem Id
      * @param {Boolean} opts.allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
      * @param {Boolean} opts.allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
      * @param {Boolean} opts.allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
@@ -603,7 +606,7 @@
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanSharePointOnlineFileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
      */
-    this.scanCloudStorageScanSharePointOnlineFileAdvanced = function(clientID, clientSecret, sharepointDomainName, siteID, filePath, opts, callback) {
+    this.scanCloudStorageScanSharePointOnlineFileAdvanced = function(clientID, clientSecret, sharepointDomainName, siteID, opts, callback) {
       opts = opts || {};
       var postBody = null;
 
@@ -627,11 +630,6 @@
         throw new Error("Missing the required parameter 'siteID' when calling scanCloudStorageScanSharePointOnlineFileAdvanced");
       }
 
-      // verify the required parameter 'filePath' is set
-      if (filePath === undefined || filePath === null) {
-        throw new Error("Missing the required parameter 'filePath' when calling scanCloudStorageScanSharePointOnlineFileAdvanced");
-      }
-
 
       var pathParams = {
       };
@@ -645,7 +643,8 @@
         'sharepointDomainName': sharepointDomainName,
         'siteID': siteID,
         'tenantID': opts['tenantID'],
-        'filePath': filePath,
+        'filePath': opts['filePath'],
+        'itemID': opts['itemID'],
         'allowExecutables': opts['allowExecutables'],
         'allowInvalidFiles': opts['allowInvalidFiles'],
         'allowScripts': opts['allowScripts'],
