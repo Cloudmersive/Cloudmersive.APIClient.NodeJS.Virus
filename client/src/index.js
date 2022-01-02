@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CloudStorageAdvancedVirusScanResult', 'model/CloudStorageVirusFound', 'model/CloudStorageVirusScanResult', 'model/VirusFound', 'model/VirusScanAdvancedResult', 'model/VirusScanResult', 'model/WebsiteScanRequest', 'model/WebsiteScanResult', 'api/ScanApi', 'api/ScanCloudStorageApi'], factory);
+    define(['ApiClient', 'model/AdditionalAdvancedScanInformation', 'model/CloudStorageAdvancedVirusScanResult', 'model/CloudStorageVirusFound', 'model/CloudStorageVirusScanResult', 'model/VirusFound', 'model/VirusScanAdvancedResult', 'model/VirusScanResult', 'model/WebsiteScanRequest', 'model/WebsiteScanResult', 'api/ScanApi', 'api/ScanCloudStorageApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/CloudStorageAdvancedVirusScanResult'), require('./model/CloudStorageVirusFound'), require('./model/CloudStorageVirusScanResult'), require('./model/VirusFound'), require('./model/VirusScanAdvancedResult'), require('./model/VirusScanResult'), require('./model/WebsiteScanRequest'), require('./model/WebsiteScanResult'), require('./api/ScanApi'), require('./api/ScanCloudStorageApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AdditionalAdvancedScanInformation'), require('./model/CloudStorageAdvancedVirusScanResult'), require('./model/CloudStorageVirusFound'), require('./model/CloudStorageVirusScanResult'), require('./model/VirusFound'), require('./model/VirusScanAdvancedResult'), require('./model/VirusScanResult'), require('./model/WebsiteScanRequest'), require('./model/WebsiteScanResult'), require('./api/ScanApi'), require('./api/ScanCloudStorageApi'));
   }
-}(function(ApiClient, CloudStorageAdvancedVirusScanResult, CloudStorageVirusFound, CloudStorageVirusScanResult, VirusFound, VirusScanAdvancedResult, VirusScanResult, WebsiteScanRequest, WebsiteScanResult, ScanApi, ScanCloudStorageApi) {
+}(function(ApiClient, AdditionalAdvancedScanInformation, CloudStorageAdvancedVirusScanResult, CloudStorageVirusFound, CloudStorageVirusScanResult, VirusFound, VirusScanAdvancedResult, VirusScanResult, WebsiteScanRequest, WebsiteScanResult, ScanApi, ScanCloudStorageApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.2.4
+   * @version 1.2.5
    */
   var exports = {
     /**
@@ -61,6 +61,11 @@
      * @property {module:ApiClient}
      */
     ApiClient: ApiClient,
+    /**
+     * The AdditionalAdvancedScanInformation model constructor.
+     * @property {module:model/AdditionalAdvancedScanInformation}
+     */
+    AdditionalAdvancedScanInformation: AdditionalAdvancedScanInformation,
     /**
      * The CloudStorageAdvancedVirusScanResult model constructor.
      * @property {module:model/CloudStorageAdvancedVirusScanResult}

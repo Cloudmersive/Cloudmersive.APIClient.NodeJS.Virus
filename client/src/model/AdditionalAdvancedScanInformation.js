@@ -25,7 +25,7 @@
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.WebsiteScanRequest = factory(root.CloudmersiveVirusApiClient.ApiClient);
+    root.CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation = factory(root.CloudmersiveVirusApiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,46 +34,55 @@
 
 
   /**
-   * The WebsiteScanRequest model module.
-   * @module model/WebsiteScanRequest
+   * The AdditionalAdvancedScanInformation model module.
+   * @module model/AdditionalAdvancedScanInformation
    * @version 1.2.5
    */
 
   /**
-   * Constructs a new <code>WebsiteScanRequest</code>.
-   * Request to scan a website for malicious content
-   * @alias module:model/WebsiteScanRequest
+   * Constructs a new <code>AdditionalAdvancedScanInformation</code>.
+   * Additional non-threat content verification information
+   * @alias module:model/AdditionalAdvancedScanInformation
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
   };
 
   /**
-   * Constructs a <code>WebsiteScanRequest</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>AdditionalAdvancedScanInformation</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/WebsiteScanRequest} obj Optional instance to populate.
-   * @return {module:model/WebsiteScanRequest} The populated <code>WebsiteScanRequest</code> instance.
+   * @param {module:model/AdditionalAdvancedScanInformation} obj Optional instance to populate.
+   * @return {module:model/AdditionalAdvancedScanInformation} The populated <code>AdditionalAdvancedScanInformation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('Url')) {
-        obj['Url'] = ApiClient.convertToType(data['Url'], 'String');
+      if (data.hasOwnProperty('ContainsJSON')) {
+        obj['ContainsJSON'] = ApiClient.convertToType(data['ContainsJSON'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsXML')) {
+        obj['ContainsXML'] = ApiClient.convertToType(data['ContainsXML'], 'Boolean');
       }
     }
     return obj;
   }
 
   /**
-   * URL of the website to scan; should begin with http:// or https://
-   * @member {String} Url
+   * True if the input file contains JSON data, false otherwise; this is not a threat signal
+   * @member {Boolean} ContainsJSON
    */
-  exports.prototype['Url'] = undefined;
+  exports.prototype['ContainsJSON'] = undefined;
+  /**
+   * True if the input file contains XML data, false otherwise; this is not a threat signal
+   * @member {Boolean} ContainsXML
+   */
+  exports.prototype['ContainsXML'] = undefined;
 
 
 

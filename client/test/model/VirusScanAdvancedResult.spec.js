@@ -104,6 +104,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsInsecureDeserialization (base name: "ContainsInsecureDeserialization")', function() {
+      // uncomment below and update the code to test the property containsInsecureDeserialization
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property containsHtml (base name: "ContainsHtml")', function() {
+      // uncomment below and update the code to test the property containsHtml
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verifiedFileFormat (base name: "VerifiedFileFormat")', function() {
       // uncomment below and update the code to test the property verifiedFileFormat
       //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
@@ -112,6 +124,12 @@
 
     it('should have the property foundViruses (base name: "FoundViruses")', function() {
       // uncomment below and update the code to test the property foundViruses
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property contentInformation (base name: "ContentInformation")', function() {
+      // uncomment below and update the code to test the property contentInformation
       //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
       //expect(instance).to.be();
     });

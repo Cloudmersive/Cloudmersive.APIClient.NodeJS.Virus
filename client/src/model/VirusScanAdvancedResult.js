@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VirusFound'], factory);
+    define(['ApiClient', 'model/AdditionalAdvancedScanInformation', 'model/VirusFound'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VirusFound'));
+    module.exports = factory(require('../ApiClient'), require('./AdditionalAdvancedScanInformation'), require('./VirusFound'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveVirusApiClient) {
       root.CloudmersiveVirusApiClient = {};
     }
-    root.CloudmersiveVirusApiClient.VirusScanAdvancedResult = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.VirusFound);
+    root.CloudmersiveVirusApiClient.VirusScanAdvancedResult = factory(root.CloudmersiveVirusApiClient.ApiClient, root.CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation, root.CloudmersiveVirusApiClient.VirusFound);
   }
-}(this, function(ApiClient, VirusFound) {
+}(this, function(ApiClient, AdditionalAdvancedScanInformation, VirusFound) {
   'use strict';
 
 
@@ -36,7 +36,7 @@
   /**
    * The VirusScanAdvancedResult model module.
    * @module model/VirusScanAdvancedResult
-   * @version 1.2.4
+   * @version 1.2.5
    */
 
   /**
@@ -47,6 +47,9 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
 
 
 
@@ -95,11 +98,20 @@
       if (data.hasOwnProperty('ContainsXmlExternalEntities')) {
         obj['ContainsXmlExternalEntities'] = ApiClient.convertToType(data['ContainsXmlExternalEntities'], 'Boolean');
       }
+      if (data.hasOwnProperty('ContainsInsecureDeserialization')) {
+        obj['ContainsInsecureDeserialization'] = ApiClient.convertToType(data['ContainsInsecureDeserialization'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsHtml')) {
+        obj['ContainsHtml'] = ApiClient.convertToType(data['ContainsHtml'], 'Boolean');
+      }
       if (data.hasOwnProperty('VerifiedFileFormat')) {
         obj['VerifiedFileFormat'] = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
       }
       if (data.hasOwnProperty('FoundViruses')) {
         obj['FoundViruses'] = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
+      }
+      if (data.hasOwnProperty('ContentInformation')) {
+        obj['ContentInformation'] = AdditionalAdvancedScanInformation.constructFromObject(data['ContentInformation']);
       }
     }
     return obj;
@@ -146,6 +158,16 @@
    */
   exports.prototype['ContainsXmlExternalEntities'] = undefined;
   /**
+   * True if the uploaded file contains embedded Insecure Deserialization threats of other embedded threats within the document, which can be a significant risk factor
+   * @member {Boolean} ContainsInsecureDeserialization
+   */
+  exports.prototype['ContainsInsecureDeserialization'] = undefined;
+  /**
+   * True if the uploaded file contains HTML, which can be a significant risk factor
+   * @member {Boolean} ContainsHtml
+   */
+  exports.prototype['ContainsHtml'] = undefined;
+  /**
    * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
    * @member {String} VerifiedFileFormat
    */
@@ -155,6 +177,11 @@
    * @member {Array.<module:model/VirusFound>} FoundViruses
    */
   exports.prototype['FoundViruses'] = undefined;
+  /**
+   * Contains additional non-threat content verification information
+   * @member {module:model/AdditionalAdvancedScanInformation} ContentInformation
+   */
+  exports.prototype['ContentInformation'] = undefined;
 
 
 
