@@ -36,7 +36,7 @@
   /**
    * The CloudStorageVirusScanResult model module.
    * @module model/CloudStorageVirusScanResult
-   * @version 1.2.5
+   * @version 1.2.6
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -81,6 +82,9 @@
       if (data.hasOwnProperty('FileSize')) {
         obj['FileSize'] = ApiClient.convertToType(data['FileSize'], 'Number');
       }
+      if (data.hasOwnProperty('ContainsContentModerationRejection')) {
+        obj['ContainsContentModerationRejection'] = ApiClient.convertToType(data['ContainsContentModerationRejection'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -110,6 +114,11 @@
    * @member {Number} FileSize
    */
   exports.prototype['FileSize'] = undefined;
+  /**
+   * Set to true when using NSFW Content Moderation in the Cloudmersive Storage Protect product (disabled by default)
+   * @member {Boolean} ContainsContentModerationRejection
+   */
+  exports.prototype['ContainsContentModerationRejection'] = undefined;
 
 
 

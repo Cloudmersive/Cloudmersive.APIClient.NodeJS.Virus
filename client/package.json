@@ -1,6 +1,6 @@
 {
   "name": "cloudmersive-virus-api-client",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "The_Cloudmersive_Virus_Scan_API_lets_you_scan_files_and_content_for_viruses_and_identify_security_issues_with_content_",
   "license": "Apache-2.0",
   "main": "src/index.js",

@@ -36,7 +36,7 @@
   /**
    * The AdditionalAdvancedScanInformation model module.
    * @module model/AdditionalAdvancedScanInformation
-   * @version 1.2.5
+   * @version 1.2.6
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -69,6 +70,9 @@
       if (data.hasOwnProperty('ContainsXML')) {
         obj['ContainsXML'] = ApiClient.convertToType(data['ContainsXML'], 'Boolean');
       }
+      if (data.hasOwnProperty('ContainsImage')) {
+        obj['ContainsImage'] = ApiClient.convertToType(data['ContainsImage'], 'Boolean');
+      }
     }
     return obj;
   }
@@ -83,6 +87,11 @@
    * @member {Boolean} ContainsXML
    */
   exports.prototype['ContainsXML'] = undefined;
+  /**
+   * True if the input file contains an image
+   * @member {Boolean} ContainsImage
+   */
+  exports.prototype['ContainsImage'] = undefined;
 
 
 

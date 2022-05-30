@@ -128,6 +128,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property contentInformation (base name: "ContentInformation")', function() {
+      // uncomment below and update the code to test the property contentInformation
+      //var instane = new CloudmersiveVirusApiClient.CloudStorageAdvancedVirusScanResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

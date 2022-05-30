@@ -86,6 +86,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsContentModerationRejection (base name: "ContainsContentModerationRejection")', function() {
+      // uncomment below and update the code to test the property containsContentModerationRejection
+      //var instane = new CloudmersiveVirusApiClient.CloudStorageVirusScanResult();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

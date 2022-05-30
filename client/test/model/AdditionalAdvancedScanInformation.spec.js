@@ -68,6 +68,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsImage (base name: "ContainsImage")', function() {
+      // uncomment below and update the code to test the property containsImage
+      //var instane = new CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
