@@ -36,7 +36,7 @@
   /**
    * The CloudStorageAdvancedVirusScanResult model module.
    * @module model/CloudStorageAdvancedVirusScanResult
-   * @version 1.2.6
+   * @version 1.2.7
    */
 
   /**

@@ -33,7 +33,7 @@
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.2.6
+   * @version 1.2.7
    */
 
   /**
@@ -146,6 +146,8 @@
      * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats. Set to true to allow these file types. Default is false (recommended).
+     * @param {Boolean} opts.allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].
      * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanAwsS3FileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
@@ -198,6 +200,8 @@
         'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
         'allowMacros': opts['allowMacros'],
         'allowXmlExternalEntities': opts['allowXmlExternalEntities'],
+        'allowInsecureDeserialization': opts['allowInsecureDeserialization'],
+        'allowHtml': opts['allowHtml'],
         'restrictFileTypes': opts['restrictFileTypes']
       };
       var formParams = {
@@ -298,6 +302,8 @@
      * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats. Set to true to allow these file types. Default is false (recommended).
+     * @param {Boolean} opts.allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].
      * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanAzureBlobAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
@@ -338,6 +344,8 @@
         'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
         'allowMacros': opts['allowMacros'],
         'allowXmlExternalEntities': opts['allowXmlExternalEntities'],
+        'allowInsecureDeserialization': opts['allowInsecureDeserialization'],
+        'allowHtml': opts['allowHtml'],
         'restrictFileTypes': opts['restrictFileTypes']
       };
       var formParams = {
@@ -438,6 +446,8 @@
      * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats. Set to true to allow these file types. Default is false (recommended).
+     * @param {Boolean} opts.allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].
      * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanGcpStorageFileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
@@ -477,6 +487,8 @@
         'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
         'allowMacros': opts['allowMacros'],
         'allowXmlExternalEntities': opts['allowXmlExternalEntities'],
+        'allowInsecureDeserialization': opts['allowInsecureDeserialization'],
+        'allowHtml': opts['allowHtml'],
         'restrictFileTypes': opts['restrictFileTypes']
       };
       var formParams = {
@@ -602,6 +614,8 @@
      * @param {Boolean} opts.allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats. Set to true to allow these file types. Default is false (recommended).
+     * @param {Boolean} opts.allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
+     * @param {Boolean} opts.allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].
      * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanSharePointOnlineFileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageAdvancedVirusScanResult}
@@ -651,6 +665,8 @@
         'allowPasswordProtectedFiles': opts['allowPasswordProtectedFiles'],
         'allowMacros': opts['allowMacros'],
         'allowXmlExternalEntities': opts['allowXmlExternalEntities'],
+        'allowInsecureDeserialization': opts['allowInsecureDeserialization'],
+        'allowHtml': opts['allowHtml'],
         'restrictFileTypes': opts['restrictFileTypes']
       };
       var formParams = {
