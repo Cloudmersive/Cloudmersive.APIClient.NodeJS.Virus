@@ -36,7 +36,7 @@
   /**
    * The WebsiteScanResult model module.
    * @module model/WebsiteScanResult
-   * @version 1.2.7
+   * @version 1.3.0
    */
 
   /**

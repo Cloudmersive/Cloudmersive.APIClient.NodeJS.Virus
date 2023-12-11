@@ -33,7 +33,7 @@
   /**
    * Scan service.
    * @module api/ScanApi
-   * @version 1.2.7
+   * @version 1.3.0
    */
 
   /**
@@ -116,6 +116,9 @@
      * @param {Boolean} opts.allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended).
      * @param {Boolean} opts.allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].  If set to true, HTML files containing script tags will be allowed, but ContainsScript will be set to true if script tags are present.
+     * @param {Boolean} opts.allowUnsafeArchives Set to false to block unsafe archives such as Zip Bombs, and other archives that can cause unsafe extraction outcomes.  Default is false (recommended).  If set to true, unsafe archives will be allowed.
+     * @param {Boolean} opts.allowOleEmbeddedObject Set to false to block OLE embedded objects, which can contain vulnerabilities and executable code.  Default is false (recommended).  If set to true, OLE embedded objects will be allowed.
+     * @param {String} opts.options Comma separated set of configuration operations.  Include permitJavascriptAndHtmlInPDFs to allow JavaScript and HTML in PDF files.  Default is no options.
      * @param {String} opts.restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled.
      * @param {module:api/ScanApi~scanFileAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/VirusScanAdvancedResult}
@@ -145,6 +148,9 @@
         'allowXmlExternalEntities': opts['allowXmlExternalEntities'],
         'allowInsecureDeserialization': opts['allowInsecureDeserialization'],
         'allowHtml': opts['allowHtml'],
+        'allowUnsafeArchives': opts['allowUnsafeArchives'],
+        'allowOleEmbeddedObject': opts['allowOleEmbeddedObject'],
+        'options': opts['options'],
         'restrictFileTypes': opts['restrictFileTypes']
       };
       var formParams = {

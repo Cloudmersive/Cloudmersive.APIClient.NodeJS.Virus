@@ -116,6 +116,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property containsUnsafeArchive (base name: "ContainsUnsafeArchive")', function() {
+      // uncomment below and update the code to test the property containsUnsafeArchive
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property containsOleEmbeddedObject (base name: "ContainsOleEmbeddedObject")', function() {
+      // uncomment below and update the code to test the property containsOleEmbeddedObject
+      //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();
+      //expect(instance).to.be();
+    });
+
     it('should have the property verifiedFileFormat (base name: "VerifiedFileFormat")', function() {
       // uncomment below and update the code to test the property verifiedFileFormat
       //var instane = new CloudmersiveVirusApiClient.VirusScanAdvancedResult();

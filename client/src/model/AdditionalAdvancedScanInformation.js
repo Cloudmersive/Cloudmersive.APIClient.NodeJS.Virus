@@ -36,7 +36,7 @@
   /**
    * The AdditionalAdvancedScanInformation model module.
    * @module model/AdditionalAdvancedScanInformation
-   * @version 1.2.7
+   * @version 1.3.0
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -73,6 +74,9 @@
       if (data.hasOwnProperty('ContainsImage')) {
         obj['ContainsImage'] = ApiClient.convertToType(data['ContainsImage'], 'Boolean');
       }
+      if (data.hasOwnProperty('RelevantSubfileName')) {
+        obj['RelevantSubfileName'] = ApiClient.convertToType(data['RelevantSubfileName'], 'String');
+      }
     }
     return obj;
   }
@@ -92,6 +96,11 @@
    * @member {Boolean} ContainsImage
    */
   exports.prototype['ContainsImage'] = undefined;
+  /**
+   * Relevant subfile name in an archive format for identified threats, if any
+   * @member {String} RelevantSubfileName
+   */
+  exports.prototype['RelevantSubfileName'] = undefined;
 
 
 

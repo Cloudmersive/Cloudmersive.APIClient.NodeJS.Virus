@@ -33,7 +33,7 @@
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.2.7
+   * @version 1.3.0
    */
 
   /**
@@ -63,10 +63,13 @@
      * @param {String} bucketRegion Name of the region of the S3 bucket, such as &#39;US-East-1&#39;
      * @param {String} bucketName Name of the S3 bucket
      * @param {String} keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with &#39;base64:&#39;, such as: &#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV&#39;.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.roleArn Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with &#39;base64:&#39;, such as: &#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV&#39;.
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageScanAwsS3FileCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CloudStorageVirusScanResult}
      */
-    this.scanCloudStorageScanAwsS3File = function(accessKey, secretKey, bucketRegion, bucketName, keyName, callback) {
+    this.scanCloudStorageScanAwsS3File = function(accessKey, secretKey, bucketRegion, bucketName, keyName, opts, callback) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'accessKey' is set
@@ -106,7 +109,8 @@
         'secretKey': secretKey,
         'bucketRegion': bucketRegion,
         'bucketName': bucketName,
-        'keyName': keyName
+        'keyName': keyName,
+        'roleArn': opts['roleArn']
       };
       var formParams = {
       };
@@ -140,6 +144,7 @@
      * @param {String} bucketName Name of the S3 bucket
      * @param {String} keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with &#39;base64:&#39;, such as: &#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV&#39;.
      * @param {Object} opts Optional parameters
+     * @param {String} opts.roleArn Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with &#39;base64:&#39;, such as: &#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV&#39;.
      * @param {Boolean} opts.allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended).
      * @param {Boolean} opts.allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended).
      * @param {Boolean} opts.allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended).
@@ -194,6 +199,7 @@
         'bucketRegion': bucketRegion,
         'bucketName': bucketName,
         'keyName': keyName,
+        'roleArn': opts['roleArn'],
         'allowExecutables': opts['allowExecutables'],
         'allowInvalidFiles': opts['allowInvalidFiles'],
         'allowScripts': opts['allowScripts'],

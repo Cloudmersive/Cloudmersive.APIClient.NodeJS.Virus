@@ -36,7 +36,7 @@
   /**
    * The VirusScanAdvancedResult model module.
    * @module model/VirusScanAdvancedResult
-   * @version 1.2.7
+   * @version 1.3.0
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -103,6 +105,12 @@
       }
       if (data.hasOwnProperty('ContainsHtml')) {
         obj['ContainsHtml'] = ApiClient.convertToType(data['ContainsHtml'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsUnsafeArchive')) {
+        obj['ContainsUnsafeArchive'] = ApiClient.convertToType(data['ContainsUnsafeArchive'], 'Boolean');
+      }
+      if (data.hasOwnProperty('ContainsOleEmbeddedObject')) {
+        obj['ContainsOleEmbeddedObject'] = ApiClient.convertToType(data['ContainsOleEmbeddedObject'], 'Boolean');
       }
       if (data.hasOwnProperty('VerifiedFileFormat')) {
         obj['VerifiedFileFormat'] = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
@@ -167,6 +175,16 @@
    * @member {Boolean} ContainsHtml
    */
   exports.prototype['ContainsHtml'] = undefined;
+  /**
+   * True if the uploaded file contains unsafe archive (e.g. zip) content, such as a Zip Bomb, or other configurations of a zip file that could lead to an unsafe extraction
+   * @member {Boolean} ContainsUnsafeArchive
+   */
+  exports.prototype['ContainsUnsafeArchive'] = undefined;
+  /**
+   * True if the uploaded file contains an OLE embedded object, which can be a significant risk factor
+   * @member {Boolean} ContainsOleEmbeddedObject
+   */
+  exports.prototype['ContainsOleEmbeddedObject'] = undefined;
   /**
    * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
    * @member {String} VerifiedFileFormat

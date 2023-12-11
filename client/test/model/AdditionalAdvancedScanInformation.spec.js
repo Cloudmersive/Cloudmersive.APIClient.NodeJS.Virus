@@ -74,6 +74,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property relevantSubfileName (base name: "RelevantSubfileName")', function() {
+      // uncomment below and update the code to test the property relevantSubfileName
+      //var instane = new CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
