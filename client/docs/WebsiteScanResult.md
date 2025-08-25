@@ -13,15 +13,15 @@ Name | Type | Description | Notes
 ## Enum: WebsiteThreatTypeEnum
 
 
-* `None` (value: `"None"`)
+* `none` (value: `"None"`)
 
-* `Malware` (value: `"Malware"`)
+* `malware` (value: `"Malware"`)
 
-* `Phishing` (value: `"Phishing"`)
+* `phishing` (value: `"Phishing"`)
 
-* `ForcedDownload` (value: `"ForcedDownload"`)
+* `forcedDownload` (value: `"ForcedDownload"`)
 
-* `UnableToConnect` (value: `"UnableToConnect"`)
+* `unableToConnect` (value: `"UnableToConnect"`)
 
 
 

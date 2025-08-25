@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "cloudmersive-virus-api-client": "file:client"
+  }
+}
