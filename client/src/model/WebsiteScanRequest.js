@@ -33,7 +33,7 @@
   /**
    * The WebsiteScanRequest model module.
    * @module model/WebsiteScanRequest
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,16 +56,16 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('Url'))
-        obj.url = ApiClient.convertToType(data['Url'], 'String');
+        obj.Url = ApiClient.convertToType(data['Url'], 'String');
     }
     return obj;
   }
 
   /**
    * URL of the website to scan; should begin with http:// or https://
-   * @member {String} url
+   * @member {String} Url
    */
-  exports.prototype.url = undefined;
+  exports.prototype.Url = undefined;
 
 
   return exports;

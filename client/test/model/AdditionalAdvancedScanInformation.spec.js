@@ -40,46 +40,46 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation);
       });
 
-      it('should have the property containsJSON (base name: "ContainsJSON")', function() {
-        // TODO: update the code to test the property containsJSON
-        expect(instance).to.have.property('containsJSON');
-        // expect(instance.containsJSON).to.be(expectedValueLiteral);
+      it('should have the property ContainsJSON (base name: "ContainsJSON")', function() {
+        // TODO: update the code to test the property ContainsJSON
+        expect(instance).to.have.property('ContainsJSON');
+        // expect(instance.ContainsJSON).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsXML (base name: "ContainsXML")', function() {
-        // TODO: update the code to test the property containsXML
-        expect(instance).to.have.property('containsXML');
-        // expect(instance.containsXML).to.be(expectedValueLiteral);
+      it('should have the property ContainsXML (base name: "ContainsXML")', function() {
+        // TODO: update the code to test the property ContainsXML
+        expect(instance).to.have.property('ContainsXML');
+        // expect(instance.ContainsXML).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsImage (base name: "ContainsImage")', function() {
-        // TODO: update the code to test the property containsImage
-        expect(instance).to.have.property('containsImage');
-        // expect(instance.containsImage).to.be(expectedValueLiteral);
+      it('should have the property ContainsImage (base name: "ContainsImage")', function() {
+        // TODO: update the code to test the property ContainsImage
+        expect(instance).to.have.property('ContainsImage');
+        // expect(instance.ContainsImage).to.be(expectedValueLiteral);
       });
 
-      it('should have the property hashSHA1 (base name: "Hash_SHA1")', function() {
-        // TODO: update the code to test the property hashSHA1
-        expect(instance).to.have.property('hashSHA1');
-        // expect(instance.hashSHA1).to.be(expectedValueLiteral);
+      it('should have the property Hash_SHA1 (base name: "Hash_SHA1")', function() {
+        // TODO: update the code to test the property Hash_SHA1
+        expect(instance).to.have.property('Hash_SHA1');
+        // expect(instance.Hash_SHA1).to.be(expectedValueLiteral);
       });
 
-      it('should have the property relevantSubfileName (base name: "RelevantSubfileName")', function() {
-        // TODO: update the code to test the property relevantSubfileName
-        expect(instance).to.have.property('relevantSubfileName');
-        // expect(instance.relevantSubfileName).to.be(expectedValueLiteral);
+      it('should have the property RelevantSubfileName (base name: "RelevantSubfileName")', function() {
+        // TODO: update the code to test the property RelevantSubfileName
+        expect(instance).to.have.property('RelevantSubfileName');
+        // expect(instance.RelevantSubfileName).to.be(expectedValueLiteral);
       });
 
-      it('should have the property relevantSubfileHashSHA1 (base name: "RelevantSubfileHash_SHA1")', function() {
-        // TODO: update the code to test the property relevantSubfileHashSHA1
-        expect(instance).to.have.property('relevantSubfileHashSHA1');
-        // expect(instance.relevantSubfileHashSHA1).to.be(expectedValueLiteral);
+      it('should have the property RelevantSubfileHash_SHA1 (base name: "RelevantSubfileHash_SHA1")', function() {
+        // TODO: update the code to test the property RelevantSubfileHash_SHA1
+        expect(instance).to.have.property('RelevantSubfileHash_SHA1');
+        // expect(instance.RelevantSubfileHash_SHA1).to.be(expectedValueLiteral);
       });
 
-      it('should have the property isAuthenticodeSigned (base name: "IsAuthenticodeSigned")', function() {
-        // TODO: update the code to test the property isAuthenticodeSigned
-        expect(instance).to.have.property('isAuthenticodeSigned');
-        // expect(instance.isAuthenticodeSigned).to.be(expectedValueLiteral);
+      it('should have the property IsAuthenticodeSigned (base name: "IsAuthenticodeSigned")', function() {
+        // TODO: update the code to test the property IsAuthenticodeSigned
+        expect(instance).to.have.property('IsAuthenticodeSigned');
+        // expect(instance.IsAuthenticodeSigned).to.be(expectedValueLiteral);
       });
 
     });

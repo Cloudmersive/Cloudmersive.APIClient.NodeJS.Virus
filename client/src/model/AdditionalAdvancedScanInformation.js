@@ -33,7 +33,7 @@
   /**
    * The AdditionalAdvancedScanInformation model module.
    * @module model/AdditionalAdvancedScanInformation
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,64 +56,64 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('ContainsJSON'))
-        obj.containsJSON = ApiClient.convertToType(data['ContainsJSON'], 'Boolean');
+        obj.ContainsJSON = ApiClient.convertToType(data['ContainsJSON'], 'Boolean');
       if (data.hasOwnProperty('ContainsXML'))
-        obj.containsXML = ApiClient.convertToType(data['ContainsXML'], 'Boolean');
+        obj.ContainsXML = ApiClient.convertToType(data['ContainsXML'], 'Boolean');
       if (data.hasOwnProperty('ContainsImage'))
-        obj.containsImage = ApiClient.convertToType(data['ContainsImage'], 'Boolean');
+        obj.ContainsImage = ApiClient.convertToType(data['ContainsImage'], 'Boolean');
       if (data.hasOwnProperty('Hash_SHA1'))
-        obj.hashSHA1 = ApiClient.convertToType(data['Hash_SHA1'], 'String');
+        obj.Hash_SHA1 = ApiClient.convertToType(data['Hash_SHA1'], 'String');
       if (data.hasOwnProperty('RelevantSubfileName'))
-        obj.relevantSubfileName = ApiClient.convertToType(data['RelevantSubfileName'], 'String');
+        obj.RelevantSubfileName = ApiClient.convertToType(data['RelevantSubfileName'], 'String');
       if (data.hasOwnProperty('RelevantSubfileHash_SHA1'))
-        obj.relevantSubfileHashSHA1 = ApiClient.convertToType(data['RelevantSubfileHash_SHA1'], 'String');
+        obj.RelevantSubfileHash_SHA1 = ApiClient.convertToType(data['RelevantSubfileHash_SHA1'], 'String');
       if (data.hasOwnProperty('IsAuthenticodeSigned'))
-        obj.isAuthenticodeSigned = ApiClient.convertToType(data['IsAuthenticodeSigned'], 'Boolean');
+        obj.IsAuthenticodeSigned = ApiClient.convertToType(data['IsAuthenticodeSigned'], 'Boolean');
     }
     return obj;
   }
 
   /**
    * True if the input file contains JSON data, false otherwise; this is not a threat signal
-   * @member {Boolean} containsJSON
+   * @member {Boolean} ContainsJSON
    */
-  exports.prototype.containsJSON = undefined;
+  exports.prototype.ContainsJSON = undefined;
 
   /**
    * True if the input file contains XML data, false otherwise; this is not a threat signal
-   * @member {Boolean} containsXML
+   * @member {Boolean} ContainsXML
    */
-  exports.prototype.containsXML = undefined;
+  exports.prototype.ContainsXML = undefined;
 
   /**
    * True if the input file contains an image
-   * @member {Boolean} containsImage
+   * @member {Boolean} ContainsImage
    */
-  exports.prototype.containsImage = undefined;
+  exports.prototype.ContainsImage = undefined;
 
   /**
    * SHA1 hash of input file
-   * @member {String} hashSHA1
+   * @member {String} Hash_SHA1
    */
-  exports.prototype.hashSHA1 = undefined;
+  exports.prototype.Hash_SHA1 = undefined;
 
   /**
    * Relevant subfile name in an archive format for identified threats, if any
-   * @member {String} relevantSubfileName
+   * @member {String} RelevantSubfileName
    */
-  exports.prototype.relevantSubfileName = undefined;
+  exports.prototype.RelevantSubfileName = undefined;
 
   /**
    * SHA1 hash of relevant subfile name in an archive format for identified threats, if any
-   * @member {String} relevantSubfileHashSHA1
+   * @member {String} RelevantSubfileHash_SHA1
    */
-  exports.prototype.relevantSubfileHashSHA1 = undefined;
+  exports.prototype.RelevantSubfileHash_SHA1 = undefined;
 
   /**
    * True if there is a valid Authenticode signature, False otherwise
-   * @member {Boolean} isAuthenticodeSigned
+   * @member {Boolean} IsAuthenticodeSigned
    */
-  exports.prototype.isAuthenticodeSigned = undefined;
+  exports.prototype.IsAuthenticodeSigned = undefined;
 
 
   return exports;

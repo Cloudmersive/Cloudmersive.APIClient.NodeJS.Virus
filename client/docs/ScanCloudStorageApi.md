@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="scanCloudStorageGetAsyncJobStatus"></a>
 # **scanCloudStorageGetAsyncJobStatus**
-> ScanCloudStorageJobStatusResult scanCloudStorageGetAsyncJobStatus(asyncJobID)
+> ScanCloudStorageJobStatusResult scanCloudStorageGetAsyncJobStatus(AsyncJobID)
 
 Get the status and result of a Scan Cloud Storage Batch Job
 
@@ -37,7 +37,7 @@ Apikey.apiKey = 'YOUR API KEY';
 
 var apiInstance = new CloudmersiveVirusApiClient.ScanCloudStorageApi();
 
-var asyncJobID = "asyncJobID_example"; // String | 
+var AsyncJobID = "AsyncJobID_example"; // String | 
 
 
 var callback = function(error, data, response) {
@@ -47,14 +47,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.scanCloudStorageGetAsyncJobStatus(asyncJobID, callback);
+apiInstance.scanCloudStorageGetAsyncJobStatus(AsyncJobID, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **asyncJobID** | **String**|  | 
+ **AsyncJobID** | **String**|  | 
 
 ### Return type
 

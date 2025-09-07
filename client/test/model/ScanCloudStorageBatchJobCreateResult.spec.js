@@ -40,16 +40,16 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.ScanCloudStorageBatchJobCreateResult);
       });
 
-      it('should have the property successful (base name: "Successful")', function() {
-        // TODO: update the code to test the property successful
-        expect(instance).to.have.property('successful');
-        // expect(instance.successful).to.be(expectedValueLiteral);
+      it('should have the property Successful (base name: "Successful")', function() {
+        // TODO: update the code to test the property Successful
+        expect(instance).to.have.property('Successful');
+        // expect(instance.Successful).to.be(expectedValueLiteral);
       });
 
-      it('should have the property asyncJobID (base name: "AsyncJobID")', function() {
-        // TODO: update the code to test the property asyncJobID
-        expect(instance).to.have.property('asyncJobID');
-        // expect(instance.asyncJobID).to.be(expectedValueLiteral);
+      it('should have the property AsyncJobID (base name: "AsyncJobID")', function() {
+        // TODO: update the code to test the property AsyncJobID
+        expect(instance).to.have.property('AsyncJobID');
+        // expect(instance.AsyncJobID).to.be(expectedValueLiteral);
       });
 
     });

@@ -40,40 +40,40 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.ScanCloudStorageJobStatusResult);
       });
 
-      it('should have the property successful (base name: "Successful")', function() {
-        // TODO: update the code to test the property successful
-        expect(instance).to.have.property('successful');
-        // expect(instance.successful).to.be(expectedValueLiteral);
+      it('should have the property Successful (base name: "Successful")', function() {
+        // TODO: update the code to test the property Successful
+        expect(instance).to.have.property('Successful');
+        // expect(instance.Successful).to.be(expectedValueLiteral);
       });
 
-      it('should have the property asyncJobStatus (base name: "AsyncJobStatus")', function() {
-        // TODO: update the code to test the property asyncJobStatus
-        expect(instance).to.have.property('asyncJobStatus');
-        // expect(instance.asyncJobStatus).to.be(expectedValueLiteral);
+      it('should have the property AsyncJobStatus (base name: "AsyncJobStatus")', function() {
+        // TODO: update the code to test the property AsyncJobStatus
+        expect(instance).to.have.property('AsyncJobStatus');
+        // expect(instance.AsyncJobStatus).to.be(expectedValueLiteral);
       });
 
-      it('should have the property asyncJobID (base name: "AsyncJobID")', function() {
-        // TODO: update the code to test the property asyncJobID
-        expect(instance).to.have.property('asyncJobID');
-        // expect(instance.asyncJobID).to.be(expectedValueLiteral);
+      it('should have the property AsyncJobID (base name: "AsyncJobID")', function() {
+        // TODO: update the code to test the property AsyncJobID
+        expect(instance).to.have.property('AsyncJobID');
+        // expect(instance.AsyncJobID).to.be(expectedValueLiteral);
       });
 
-      it('should have the property result (base name: "Result")', function() {
-        // TODO: update the code to test the property result
-        expect(instance).to.have.property('result');
-        // expect(instance.result).to.be(expectedValueLiteral);
+      it('should have the property Result (base name: "Result")', function() {
+        // TODO: update the code to test the property Result
+        expect(instance).to.have.property('Result');
+        // expect(instance.Result).to.be(expectedValueLiteral);
       });
 
-      it('should have the property jobDuration (base name: "JobDuration")', function() {
-        // TODO: update the code to test the property jobDuration
-        expect(instance).to.have.property('jobDuration');
-        // expect(instance.jobDuration).to.be(expectedValueLiteral);
+      it('should have the property JobDuration (base name: "JobDuration")', function() {
+        // TODO: update the code to test the property JobDuration
+        expect(instance).to.have.property('JobDuration');
+        // expect(instance.JobDuration).to.be(expectedValueLiteral);
       });
 
-      it('should have the property errorMessage (base name: "ErrorMessage")', function() {
-        // TODO: update the code to test the property errorMessage
-        expect(instance).to.have.property('errorMessage');
-        // expect(instance.errorMessage).to.be(expectedValueLiteral);
+      it('should have the property ErrorMessage (base name: "ErrorMessage")', function() {
+        // TODO: update the code to test the property ErrorMessage
+        expect(instance).to.have.property('ErrorMessage');
+        // expect(instance.ErrorMessage).to.be(expectedValueLiteral);
       });
 
     });

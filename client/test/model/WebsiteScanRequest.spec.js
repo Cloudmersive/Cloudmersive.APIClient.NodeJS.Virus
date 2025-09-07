@@ -40,10 +40,10 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.WebsiteScanRequest);
       });
 
-      it('should have the property url (base name: "Url")', function() {
-        // TODO: update the code to test the property url
-        expect(instance).to.have.property('url');
-        // expect(instance.url).to.be(expectedValueLiteral);
+      it('should have the property Url (base name: "Url")', function() {
+        // TODO: update the code to test the property Url
+        expect(instance).to.have.property('Url');
+        // expect(instance.Url).to.be(expectedValueLiteral);
       });
 
     });

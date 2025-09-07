@@ -40,112 +40,112 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.CloudStorageAdvancedVirusScanResult);
       });
 
-      it('should have the property successful (base name: "Successful")', function() {
-        // TODO: update the code to test the property successful
-        expect(instance).to.have.property('successful');
-        // expect(instance.successful).to.be(expectedValueLiteral);
+      it('should have the property Successful (base name: "Successful")', function() {
+        // TODO: update the code to test the property Successful
+        expect(instance).to.have.property('Successful');
+        // expect(instance.Successful).to.be(expectedValueLiteral);
       });
 
-      it('should have the property cleanResult (base name: "CleanResult")', function() {
-        // TODO: update the code to test the property cleanResult
-        expect(instance).to.have.property('cleanResult');
-        // expect(instance.cleanResult).to.be(expectedValueLiteral);
+      it('should have the property CleanResult (base name: "CleanResult")', function() {
+        // TODO: update the code to test the property CleanResult
+        expect(instance).to.have.property('CleanResult');
+        // expect(instance.CleanResult).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsExecutable (base name: "ContainsExecutable")', function() {
-        // TODO: update the code to test the property containsExecutable
-        expect(instance).to.have.property('containsExecutable');
-        // expect(instance.containsExecutable).to.be(expectedValueLiteral);
+      it('should have the property ContainsExecutable (base name: "ContainsExecutable")', function() {
+        // TODO: update the code to test the property ContainsExecutable
+        expect(instance).to.have.property('ContainsExecutable');
+        // expect(instance.ContainsExecutable).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsInvalidFile (base name: "ContainsInvalidFile")', function() {
-        // TODO: update the code to test the property containsInvalidFile
-        expect(instance).to.have.property('containsInvalidFile');
-        // expect(instance.containsInvalidFile).to.be(expectedValueLiteral);
+      it('should have the property ContainsInvalidFile (base name: "ContainsInvalidFile")', function() {
+        // TODO: update the code to test the property ContainsInvalidFile
+        expect(instance).to.have.property('ContainsInvalidFile');
+        // expect(instance.ContainsInvalidFile).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsScript (base name: "ContainsScript")', function() {
-        // TODO: update the code to test the property containsScript
-        expect(instance).to.have.property('containsScript');
-        // expect(instance.containsScript).to.be(expectedValueLiteral);
+      it('should have the property ContainsScript (base name: "ContainsScript")', function() {
+        // TODO: update the code to test the property ContainsScript
+        expect(instance).to.have.property('ContainsScript');
+        // expect(instance.ContainsScript).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsPasswordProtectedFile (base name: "ContainsPasswordProtectedFile")', function() {
-        // TODO: update the code to test the property containsPasswordProtectedFile
-        expect(instance).to.have.property('containsPasswordProtectedFile');
-        // expect(instance.containsPasswordProtectedFile).to.be(expectedValueLiteral);
+      it('should have the property ContainsPasswordProtectedFile (base name: "ContainsPasswordProtectedFile")', function() {
+        // TODO: update the code to test the property ContainsPasswordProtectedFile
+        expect(instance).to.have.property('ContainsPasswordProtectedFile');
+        // expect(instance.ContainsPasswordProtectedFile).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsRestrictedFileFormat (base name: "ContainsRestrictedFileFormat")', function() {
-        // TODO: update the code to test the property containsRestrictedFileFormat
-        expect(instance).to.have.property('containsRestrictedFileFormat');
-        // expect(instance.containsRestrictedFileFormat).to.be(expectedValueLiteral);
+      it('should have the property ContainsRestrictedFileFormat (base name: "ContainsRestrictedFileFormat")', function() {
+        // TODO: update the code to test the property ContainsRestrictedFileFormat
+        expect(instance).to.have.property('ContainsRestrictedFileFormat');
+        // expect(instance.ContainsRestrictedFileFormat).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsMacros (base name: "ContainsMacros")', function() {
-        // TODO: update the code to test the property containsMacros
-        expect(instance).to.have.property('containsMacros');
-        // expect(instance.containsMacros).to.be(expectedValueLiteral);
+      it('should have the property ContainsMacros (base name: "ContainsMacros")', function() {
+        // TODO: update the code to test the property ContainsMacros
+        expect(instance).to.have.property('ContainsMacros');
+        // expect(instance.ContainsMacros).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsXmlExternalEntities (base name: "ContainsXmlExternalEntities")', function() {
-        // TODO: update the code to test the property containsXmlExternalEntities
-        expect(instance).to.have.property('containsXmlExternalEntities');
-        // expect(instance.containsXmlExternalEntities).to.be(expectedValueLiteral);
+      it('should have the property ContainsXmlExternalEntities (base name: "ContainsXmlExternalEntities")', function() {
+        // TODO: update the code to test the property ContainsXmlExternalEntities
+        expect(instance).to.have.property('ContainsXmlExternalEntities');
+        // expect(instance.ContainsXmlExternalEntities).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsInsecureDeserialization (base name: "ContainsInsecureDeserialization")', function() {
-        // TODO: update the code to test the property containsInsecureDeserialization
-        expect(instance).to.have.property('containsInsecureDeserialization');
-        // expect(instance.containsInsecureDeserialization).to.be(expectedValueLiteral);
+      it('should have the property ContainsInsecureDeserialization (base name: "ContainsInsecureDeserialization")', function() {
+        // TODO: update the code to test the property ContainsInsecureDeserialization
+        expect(instance).to.have.property('ContainsInsecureDeserialization');
+        // expect(instance.ContainsInsecureDeserialization).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsHtml (base name: "ContainsHtml")', function() {
-        // TODO: update the code to test the property containsHtml
-        expect(instance).to.have.property('containsHtml');
-        // expect(instance.containsHtml).to.be(expectedValueLiteral);
+      it('should have the property ContainsHtml (base name: "ContainsHtml")', function() {
+        // TODO: update the code to test the property ContainsHtml
+        expect(instance).to.have.property('ContainsHtml');
+        // expect(instance.ContainsHtml).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsUnsafeArchive (base name: "ContainsUnsafeArchive")', function() {
-        // TODO: update the code to test the property containsUnsafeArchive
-        expect(instance).to.have.property('containsUnsafeArchive');
-        // expect(instance.containsUnsafeArchive).to.be(expectedValueLiteral);
+      it('should have the property ContainsUnsafeArchive (base name: "ContainsUnsafeArchive")', function() {
+        // TODO: update the code to test the property ContainsUnsafeArchive
+        expect(instance).to.have.property('ContainsUnsafeArchive');
+        // expect(instance.ContainsUnsafeArchive).to.be(expectedValueLiteral);
       });
 
-      it('should have the property containsOleEmbeddedObject (base name: "ContainsOleEmbeddedObject")', function() {
-        // TODO: update the code to test the property containsOleEmbeddedObject
-        expect(instance).to.have.property('containsOleEmbeddedObject');
-        // expect(instance.containsOleEmbeddedObject).to.be(expectedValueLiteral);
+      it('should have the property ContainsOleEmbeddedObject (base name: "ContainsOleEmbeddedObject")', function() {
+        // TODO: update the code to test the property ContainsOleEmbeddedObject
+        expect(instance).to.have.property('ContainsOleEmbeddedObject');
+        // expect(instance.ContainsOleEmbeddedObject).to.be(expectedValueLiteral);
       });
 
-      it('should have the property verifiedFileFormat (base name: "VerifiedFileFormat")', function() {
-        // TODO: update the code to test the property verifiedFileFormat
-        expect(instance).to.have.property('verifiedFileFormat');
-        // expect(instance.verifiedFileFormat).to.be(expectedValueLiteral);
+      it('should have the property VerifiedFileFormat (base name: "VerifiedFileFormat")', function() {
+        // TODO: update the code to test the property VerifiedFileFormat
+        expect(instance).to.have.property('VerifiedFileFormat');
+        // expect(instance.VerifiedFileFormat).to.be(expectedValueLiteral);
       });
 
-      it('should have the property foundViruses (base name: "FoundViruses")', function() {
-        // TODO: update the code to test the property foundViruses
-        expect(instance).to.have.property('foundViruses');
-        // expect(instance.foundViruses).to.be(expectedValueLiteral);
+      it('should have the property FoundViruses (base name: "FoundViruses")', function() {
+        // TODO: update the code to test the property FoundViruses
+        expect(instance).to.have.property('FoundViruses');
+        // expect(instance.FoundViruses).to.be(expectedValueLiteral);
       });
 
-      it('should have the property errorDetailedDescription (base name: "ErrorDetailedDescription")', function() {
-        // TODO: update the code to test the property errorDetailedDescription
-        expect(instance).to.have.property('errorDetailedDescription');
-        // expect(instance.errorDetailedDescription).to.be(expectedValueLiteral);
+      it('should have the property ErrorDetailedDescription (base name: "ErrorDetailedDescription")', function() {
+        // TODO: update the code to test the property ErrorDetailedDescription
+        expect(instance).to.have.property('ErrorDetailedDescription');
+        // expect(instance.ErrorDetailedDescription).to.be(expectedValueLiteral);
       });
 
-      it('should have the property fileSize (base name: "FileSize")', function() {
-        // TODO: update the code to test the property fileSize
-        expect(instance).to.have.property('fileSize');
-        // expect(instance.fileSize).to.be(expectedValueLiteral);
+      it('should have the property FileSize (base name: "FileSize")', function() {
+        // TODO: update the code to test the property FileSize
+        expect(instance).to.have.property('FileSize');
+        // expect(instance.FileSize).to.be(expectedValueLiteral);
       });
 
-      it('should have the property contentInformation (base name: "ContentInformation")', function() {
-        // TODO: update the code to test the property contentInformation
-        expect(instance).to.have.property('contentInformation');
-        // expect(instance.contentInformation).to.be(expectedValueLiteral);
+      it('should have the property ContentInformation (base name: "ContentInformation")', function() {
+        // TODO: update the code to test the property ContentInformation
+        expect(instance).to.have.property('ContentInformation');
+        // expect(instance.ContentInformation).to.be(expectedValueLiteral);
       });
 
     });

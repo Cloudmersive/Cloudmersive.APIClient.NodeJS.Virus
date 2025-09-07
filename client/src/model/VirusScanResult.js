@@ -33,7 +33,7 @@
   /**
    * The VirusScanResult model module.
    * @module model/VirusScanResult
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,24 +56,24 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('CleanResult'))
-        obj.cleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
+        obj.CleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
       if (data.hasOwnProperty('FoundViruses'))
-        obj.foundViruses = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
+        obj.FoundViruses = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
     }
     return obj;
   }
 
   /**
    * True if the scan contained no viruses, false otherwise
-   * @member {Boolean} cleanResult
+   * @member {Boolean} CleanResult
    */
-  exports.prototype.cleanResult = undefined;
+  exports.prototype.CleanResult = undefined;
 
   /**
    * Array of viruses found, if any
-   * @member {Array.<module:model/VirusFound>} foundViruses
+   * @member {Array.<module:model/VirusFound>} FoundViruses
    */
-  exports.prototype.foundViruses = undefined;
+  exports.prototype.FoundViruses = undefined;
 
 
   return exports;

@@ -33,7 +33,7 @@
   /**
    * The ScanCloudStorageJobStatusResult model module.
    * @module model/ScanCloudStorageJobStatusResult
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,56 +56,56 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('Successful'))
-        obj.successful = ApiClient.convertToType(data['Successful'], 'Boolean');
+        obj.Successful = ApiClient.convertToType(data['Successful'], 'Boolean');
       if (data.hasOwnProperty('AsyncJobStatus'))
-        obj.asyncJobStatus = ApiClient.convertToType(data['AsyncJobStatus'], 'String');
+        obj.AsyncJobStatus = ApiClient.convertToType(data['AsyncJobStatus'], 'String');
       if (data.hasOwnProperty('AsyncJobID'))
-        obj.asyncJobID = ApiClient.convertToType(data['AsyncJobID'], 'String');
+        obj.AsyncJobID = ApiClient.convertToType(data['AsyncJobID'], 'String');
       if (data.hasOwnProperty('Result'))
-        obj.result = CloudStorageAdvancedVirusScanResult.constructFromObject(data['Result']);
+        obj.Result = CloudStorageAdvancedVirusScanResult.constructFromObject(data['Result']);
       if (data.hasOwnProperty('JobDuration'))
-        obj.jobDuration = ApiClient.convertToType(data['JobDuration'], 'String');
+        obj.JobDuration = ApiClient.convertToType(data['JobDuration'], 'String');
       if (data.hasOwnProperty('ErrorMessage'))
-        obj.errorMessage = ApiClient.convertToType(data['ErrorMessage'], 'String');
+        obj.ErrorMessage = ApiClient.convertToType(data['ErrorMessage'], 'String');
     }
     return obj;
   }
 
   /**
    * Tru eif the operation to check the status of the job was successful, false otherwise
-   * @member {Boolean} successful
+   * @member {Boolean} Successful
    */
-  exports.prototype.successful = undefined;
+  exports.prototype.Successful = undefined;
 
   /**
    * Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED
-   * @member {String} asyncJobStatus
+   * @member {String} AsyncJobStatus
    */
-  exports.prototype.asyncJobStatus = undefined;
+  exports.prototype.AsyncJobStatus = undefined;
 
   /**
    * Job ID of the async batch job
-   * @member {String} asyncJobID
+   * @member {String} AsyncJobID
    */
-  exports.prototype.asyncJobID = undefined;
+  exports.prototype.AsyncJobID = undefined;
 
   /**
    * Output scan result, if applicable
-   * @member {module:model/CloudStorageAdvancedVirusScanResult} result
+   * @member {module:model/CloudStorageAdvancedVirusScanResult} Result
    */
-  exports.prototype.result = undefined;
+  exports.prototype.Result = undefined;
 
   /**
    * Duration of a completed job
-   * @member {String} jobDuration
+   * @member {String} JobDuration
    */
-  exports.prototype.jobDuration = undefined;
+  exports.prototype.JobDuration = undefined;
 
   /**
    * Error message (if any)
-   * @member {String} errorMessage
+   * @member {String} ErrorMessage
    */
-  exports.prototype.errorMessage = undefined;
+  exports.prototype.ErrorMessage = undefined;
 
 
   return exports;

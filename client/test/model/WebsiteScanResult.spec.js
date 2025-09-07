@@ -40,28 +40,28 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.WebsiteScanResult);
       });
 
-      it('should have the property cleanResult (base name: "CleanResult")', function() {
-        // TODO: update the code to test the property cleanResult
-        expect(instance).to.have.property('cleanResult');
-        // expect(instance.cleanResult).to.be(expectedValueLiteral);
+      it('should have the property CleanResult (base name: "CleanResult")', function() {
+        // TODO: update the code to test the property CleanResult
+        expect(instance).to.have.property('CleanResult');
+        // expect(instance.CleanResult).to.be(expectedValueLiteral);
       });
 
-      it('should have the property websiteThreatType (base name: "WebsiteThreatType")', function() {
-        // TODO: update the code to test the property websiteThreatType
-        expect(instance).to.have.property('websiteThreatType');
-        // expect(instance.websiteThreatType).to.be(expectedValueLiteral);
+      it('should have the property WebsiteThreatType (base name: "WebsiteThreatType")', function() {
+        // TODO: update the code to test the property WebsiteThreatType
+        expect(instance).to.have.property('WebsiteThreatType');
+        // expect(instance.WebsiteThreatType).to.be(expectedValueLiteral);
       });
 
-      it('should have the property foundViruses (base name: "FoundViruses")', function() {
-        // TODO: update the code to test the property foundViruses
-        expect(instance).to.have.property('foundViruses');
-        // expect(instance.foundViruses).to.be(expectedValueLiteral);
+      it('should have the property FoundViruses (base name: "FoundViruses")', function() {
+        // TODO: update the code to test the property FoundViruses
+        expect(instance).to.have.property('FoundViruses');
+        // expect(instance.FoundViruses).to.be(expectedValueLiteral);
       });
 
-      it('should have the property websiteHttpResponseCode (base name: "WebsiteHttpResponseCode")', function() {
-        // TODO: update the code to test the property websiteHttpResponseCode
-        expect(instance).to.have.property('websiteHttpResponseCode');
-        // expect(instance.websiteHttpResponseCode).to.be(expectedValueLiteral);
+      it('should have the property WebsiteHttpResponseCode (base name: "WebsiteHttpResponseCode")', function() {
+        // TODO: update the code to test the property WebsiteHttpResponseCode
+        expect(instance).to.have.property('WebsiteHttpResponseCode');
+        // expect(instance.WebsiteHttpResponseCode).to.be(expectedValueLiteral);
       });
 
     });

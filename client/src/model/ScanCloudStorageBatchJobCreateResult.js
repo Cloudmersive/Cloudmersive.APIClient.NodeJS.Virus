@@ -33,7 +33,7 @@
   /**
    * The ScanCloudStorageBatchJobCreateResult model module.
    * @module model/ScanCloudStorageBatchJobCreateResult
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,24 +56,24 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('Successful'))
-        obj.successful = ApiClient.convertToType(data['Successful'], 'Boolean');
+        obj.Successful = ApiClient.convertToType(data['Successful'], 'Boolean');
       if (data.hasOwnProperty('AsyncJobID'))
-        obj.asyncJobID = ApiClient.convertToType(data['AsyncJobID'], 'String');
+        obj.AsyncJobID = ApiClient.convertToType(data['AsyncJobID'], 'String');
     }
     return obj;
   }
 
   /**
    * True if successful, false otherwise
-   * @member {Boolean} successful
+   * @member {Boolean} Successful
    */
-  exports.prototype.successful = undefined;
+  exports.prototype.Successful = undefined;
 
   /**
    * When creating a job, an Async Job ID is returned.  Use the GetAsyncJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes
-   * @member {String} asyncJobID
+   * @member {String} AsyncJobID
    */
-  exports.prototype.asyncJobID = undefined;
+  exports.prototype.AsyncJobID = undefined;
 
 
   return exports;

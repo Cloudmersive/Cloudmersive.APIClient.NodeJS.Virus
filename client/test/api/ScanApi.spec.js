@@ -31,58 +31,52 @@
 
   beforeEach(function() {
     instance = new CloudmersiveVirusApiClient.ScanApi();
-
-    var defaultClient = CloudmersiveVirusApiClient.ApiClient.instance;
-
-// Configure API key authorization: Apikey
-var Apikey = defaultClient.authentications['Apikey'];
-Apikey.apiKey = '';
   });
 
   describe('(package)', function() {
-    this.timeout(300000);
     describe('ScanApi', function() {
       describe('scanFile', function() {
         it('should call scanFile successfully', function(done) {
           // TODO: uncomment, update parameter values for scanFile call and complete the assertions
-          
-          var inputFile = "C:\\temp\\hello.txt";
-
-          console.log('calling scanFile…'); // proves we didn't end the test early
+          /*
+          var inputFile = "/path/to/file.txt";
 
           instance.scanFile(inputFile, function(error, data, response) {
-            console.log('callback hit');
-            console.log('status:', response && response.statusCode);
-            console.log('data:', data);
-
             if (error) {
-              expect(error).to.be.ok();
               done(error);
               return;
             }
-
-            
-
-
             // TODO: update response assertions
             expect(data).to.be.a(CloudmersiveVirusApiClient.VirusScanResult);
-            expect(data.cleanResult).to.be.a('boolean');
-            expect(data.cleanResult).to.be(true);
+            expect(data.CleanResult).to.be.a('boolean');
+            expect(data.CleanResult).to.be(false);
             {
-              let dataCtr = data.foundViruses;
-              
+              let dataCtr = data.FoundViruses;
+              expect(dataCtr).to.be.an(Array);
+              expect(dataCtr).to.not.be.empty();
+              for (let p in dataCtr) {
+                let data = dataCtr[p];
+                expect(data).to.be.a(CloudmersiveVirusApiClient.VirusFound);
+                expect(data.FileName).to.be.a('string');
+                expect(data.FileName).to.be("");
+                expect(data.VirusName).to.be.a('string');
+                expect(data.VirusName).to.be("");
+
+                      }
             }
 
             done();
           });
-          
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
         });
       });
       describe('scanFileAdvanced', function() {
         it('should call scanFileAdvanced successfully', function(done) {
           // TODO: uncomment, update parameter values for scanFileAdvanced call and complete the assertions
-          
-          var inputFile = "C:\\temp\\hello.txt";
+          /*
+          var inputFile = "/path/to/file.txt";
           var opts = {};
           opts.fileName = "fileName_example";
           opts.allowExecutables = true;
@@ -96,70 +90,79 @@ Apikey.apiKey = '';
           opts.allowUnsafeArchives = true;
           opts.allowOleEmbeddedObject = true;
           opts.allowUnwantedAction = true;
-          opts.options = "";
-          opts.restrictFileTypes = "";
+          opts.options = "options_example";
+          opts.restrictFileTypes = "restrictFileTypes_example";
 
           instance.scanFileAdvanced(inputFile, opts, function(error, data, response) {
-
-            console.log('data:', data);
-
-
             if (error) {
               done(error);
               return;
             }
             // TODO: update response assertions
             expect(data).to.be.a(CloudmersiveVirusApiClient.VirusScanAdvancedResult);
-            expect(data.cleanResult).to.be.a('boolean');
-            expect(data.cleanResult).to.be(true);
-            expect(data.containsExecutable).to.be.a('boolean');
-            expect(data.containsExecutable).to.be(false);
-            expect(data.containsInvalidFile).to.be.a('boolean');
-            expect(data.containsInvalidFile).to.be(false);
-            expect(data.containsScript).to.be.a('boolean');
-            expect(data.containsScript).to.be(false);
-            expect(data.containsPasswordProtectedFile).to.be.a('boolean');
-            expect(data.containsPasswordProtectedFile).to.be(false);
-            expect(data.containsRestrictedFileFormat).to.be.a('boolean');
-            expect(data.containsRestrictedFileFormat).to.be(false);
-            expect(data.containsMacros).to.be.a('boolean');
-            expect(data.containsMacros).to.be(false);
-            expect(data.containsXmlExternalEntities).to.be.a('boolean');
-            expect(data.containsXmlExternalEntities).to.be(false);
-            expect(data.containsInsecureDeserialization).to.be.a('boolean');
-            expect(data.containsInsecureDeserialization).to.be(false);
-            expect(data.containsHtml).to.be.a('boolean');
-            expect(data.containsHtml).to.be(false);
-            expect(data.containsUnsafeArchive).to.be.a('boolean');
-            expect(data.containsUnsafeArchive).to.be(false);
-            expect(data.containsOleEmbeddedObject).to.be.a('boolean');
-            expect(data.containsOleEmbeddedObject).to.be(false);
-            expect(data.containsUnwantedAction).to.be.a('boolean');
-            expect(data.containsUnwantedAction).to.be(false);
-            
+            expect(data.CleanResult).to.be.a('boolean');
+            expect(data.CleanResult).to.be(false);
+            expect(data.ContainsExecutable).to.be.a('boolean');
+            expect(data.ContainsExecutable).to.be(false);
+            expect(data.ContainsInvalidFile).to.be.a('boolean');
+            expect(data.ContainsInvalidFile).to.be(false);
+            expect(data.ContainsScript).to.be.a('boolean');
+            expect(data.ContainsScript).to.be(false);
+            expect(data.ContainsPasswordProtectedFile).to.be.a('boolean');
+            expect(data.ContainsPasswordProtectedFile).to.be(false);
+            expect(data.ContainsRestrictedFileFormat).to.be.a('boolean');
+            expect(data.ContainsRestrictedFileFormat).to.be(false);
+            expect(data.ContainsMacros).to.be.a('boolean');
+            expect(data.ContainsMacros).to.be(false);
+            expect(data.ContainsXmlExternalEntities).to.be.a('boolean');
+            expect(data.ContainsXmlExternalEntities).to.be(false);
+            expect(data.ContainsInsecureDeserialization).to.be.a('boolean');
+            expect(data.ContainsInsecureDeserialization).to.be(false);
+            expect(data.ContainsHtml).to.be.a('boolean');
+            expect(data.ContainsHtml).to.be(false);
+            expect(data.ContainsUnsafeArchive).to.be.a('boolean');
+            expect(data.ContainsUnsafeArchive).to.be(false);
+            expect(data.ContainsOleEmbeddedObject).to.be.a('boolean');
+            expect(data.ContainsOleEmbeddedObject).to.be(false);
+            expect(data.ContainsUnwantedAction).to.be.a('boolean');
+            expect(data.ContainsUnwantedAction).to.be(false);
+            expect(data.VerifiedFileFormat).to.be.a('string');
+            expect(data.VerifiedFileFormat).to.be("");
             {
-              let dataCtr = data.foundViruses;
-              
+              let dataCtr = data.FoundViruses;
+              expect(dataCtr).to.be.an(Array);
+              expect(dataCtr).to.not.be.empty();
+              for (let p in dataCtr) {
+                let data = dataCtr[p];
+                expect(data).to.be.a(CloudmersiveVirusApiClient.VirusFound);
+                expect(data.FileName).to.be.a('string');
+                expect(data.FileName).to.be("");
+                expect(data.VirusName).to.be.a('string');
+                expect(data.VirusName).to.be("");
+
+                      }
             }
-            expect(data.contentInformation).to.be.a(CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation);
-                  expect(data.contentInformation.containsJSON).to.be.a('boolean');
-              expect(data.contentInformation.containsJSON).to.be(false);
-              expect(data.contentInformation.containsXML).to.be.a('boolean');
-              expect(data.contentInformation.containsXML).to.be(false);
-              expect(data.contentInformation.containsImage).to.be.a('boolean');
-              expect(data.contentInformation.containsImage).to.be(false);
-              expect(data.contentInformation.hashSHA1).to.be.a('string');
-              //expect(data.contentInformation.hashSHA1).to.be("");
-              //expect(data.contentInformation.relevantSubfileName).to.be.a('string');
-              //expect(data.contentInformation.relevantSubfileName).to.be("");
-              //expect(data.contentInformation.relevantSubfileHashSHA1).to.be.a('string');
-              //expect(data.contentInformation.relevantSubfileHashSHA1).to.be("");
-              expect(data.contentInformation.isAuthenticodeSigned).to.be.a('boolean');
-              expect(data.contentInformation.isAuthenticodeSigned).to.be(false);
+            expect(data.ContentInformation).to.be.a(CloudmersiveVirusApiClient.AdditionalAdvancedScanInformation);
+                  expect(data.ContentInformation.ContainsJSON).to.be.a('boolean');
+              expect(data.ContentInformation.ContainsJSON).to.be(false);
+              expect(data.ContentInformation.ContainsXML).to.be.a('boolean');
+              expect(data.ContentInformation.ContainsXML).to.be(false);
+              expect(data.ContentInformation.ContainsImage).to.be.a('boolean');
+              expect(data.ContentInformation.ContainsImage).to.be(false);
+              expect(data.ContentInformation.Hash_SHA1).to.be.a('string');
+              expect(data.ContentInformation.Hash_SHA1).to.be("");
+              expect(data.ContentInformation.RelevantSubfileName).to.be.a('string');
+              expect(data.ContentInformation.RelevantSubfileName).to.be("");
+              expect(data.ContentInformation.RelevantSubfileHash_SHA1).to.be.a('string');
+              expect(data.ContentInformation.RelevantSubfileHash_SHA1).to.be("");
+              expect(data.ContentInformation.IsAuthenticodeSigned).to.be.a('boolean');
+              expect(data.ContentInformation.IsAuthenticodeSigned).to.be(false);
 
             done();
           });
-          
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
         });
       });
       describe('scanWebsite', function() {
@@ -167,7 +170,7 @@ Apikey.apiKey = '';
           // TODO: uncomment, update parameter values for scanWebsite call and complete the assertions
           /*
           var input = new CloudmersiveVirusApiClient.WebsiteScanRequest();
-          input.url = "";
+          input.Url = "";
 
           instance.scanWebsite(input, function(error, data, response) {
             if (error) {
@@ -176,26 +179,26 @@ Apikey.apiKey = '';
             }
             // TODO: update response assertions
             expect(data).to.be.a(CloudmersiveVirusApiClient.WebsiteScanResult);
-            expect(data.cleanResult).to.be.a('boolean');
-            expect(data.cleanResult).to.be(false);
-            expect(data.websiteThreatType).to.be.a('string');
-            expect(data.websiteThreatType).to.be("None");
+            expect(data.CleanResult).to.be.a('boolean');
+            expect(data.CleanResult).to.be(false);
+            expect(data.WebsiteThreatType).to.be.a('string');
+            expect(data.WebsiteThreatType).to.be("None");
             {
-              let dataCtr = data.foundViruses;
+              let dataCtr = data.FoundViruses;
               expect(dataCtr).to.be.an(Array);
               expect(dataCtr).to.not.be.empty();
               for (let p in dataCtr) {
                 let data = dataCtr[p];
                 expect(data).to.be.a(CloudmersiveVirusApiClient.VirusFound);
-                expect(data.fileName).to.be.a('string');
-                expect(data.fileName).to.be("");
-                expect(data.virusName).to.be.a('string');
-                expect(data.virusName).to.be("");
+                expect(data.FileName).to.be.a('string');
+                expect(data.FileName).to.be("");
+                expect(data.VirusName).to.be.a('string');
+                expect(data.VirusName).to.be("");
 
                       }
             }
-            expect(data.websiteHttpResponseCode).to.be.a('number');
-            expect(data.websiteHttpResponseCode).to.be(0);
+            expect(data.WebsiteHttpResponseCode).to.be.a('number');
+            expect(data.WebsiteHttpResponseCode).to.be(0);
 
             done();
           });

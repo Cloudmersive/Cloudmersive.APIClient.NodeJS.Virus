@@ -40,16 +40,16 @@
         expect(instance).to.be.a(CloudmersiveVirusApiClient.VirusScanResult);
       });
 
-      it('should have the property cleanResult (base name: "CleanResult")', function() {
-        // TODO: update the code to test the property cleanResult
-        expect(instance).to.have.property('cleanResult');
-        // expect(instance.cleanResult).to.be(expectedValueLiteral);
+      it('should have the property CleanResult (base name: "CleanResult")', function() {
+        // TODO: update the code to test the property CleanResult
+        expect(instance).to.have.property('CleanResult');
+        // expect(instance.CleanResult).to.be(expectedValueLiteral);
       });
 
-      it('should have the property foundViruses (base name: "FoundViruses")', function() {
-        // TODO: update the code to test the property foundViruses
-        expect(instance).to.have.property('foundViruses');
-        // expect(instance.foundViruses).to.be(expectedValueLiteral);
+      it('should have the property FoundViruses (base name: "FoundViruses")', function() {
+        // TODO: update the code to test the property FoundViruses
+        expect(instance).to.have.property('FoundViruses');
+        // expect(instance.FoundViruses).to.be(expectedValueLiteral);
       });
 
     });

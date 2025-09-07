@@ -33,7 +33,7 @@
   /**
    * ScanCloudStorage service.
    * @module api/ScanCloudStorageApi
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -58,23 +58,23 @@
     /**
      * Get the status and result of a Scan Cloud Storage Batch Job
      * Returns the result of the Async Job - possible states can be STARTED or COMPLETED.  This API is only available for Cloudmersive Managed Instance and Private Cloud deployments.
-     * @param {String} asyncJobID 
+     * @param {String} AsyncJobID 
      * @param {module:api/ScanCloudStorageApi~scanCloudStorageGetAsyncJobStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ScanCloudStorageJobStatusResult}
      */
-    this.scanCloudStorageGetAsyncJobStatus = function(asyncJobID, callback) {
+    this.scanCloudStorageGetAsyncJobStatus = function(AsyncJobID, callback) {
       var postBody = null;
 
-      // verify the required parameter 'asyncJobID' is set
-      if (asyncJobID === undefined || asyncJobID === null) {
-        throw new Error("Missing the required parameter 'asyncJobID' when calling scanCloudStorageGetAsyncJobStatus");
+      // verify the required parameter 'AsyncJobID' is set
+      if (AsyncJobID === undefined || AsyncJobID === null) {
+        throw new Error("Missing the required parameter 'AsyncJobID' when calling scanCloudStorageGetAsyncJobStatus");
       }
 
 
       var pathParams = {
       };
       var queryParams = {
-        'AsyncJobID': asyncJobID,
+        'AsyncJobID': AsyncJobID,
       };
       var collectionQueryParams = {
       };

@@ -33,7 +33,7 @@
   /**
    * The CloudStorageVirusFound model module.
    * @module model/CloudStorageVirusFound
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,24 +56,24 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('FileName'))
-        obj.fileName = ApiClient.convertToType(data['FileName'], 'String');
+        obj.FileName = ApiClient.convertToType(data['FileName'], 'String');
       if (data.hasOwnProperty('VirusName'))
-        obj.virusName = ApiClient.convertToType(data['VirusName'], 'String');
+        obj.VirusName = ApiClient.convertToType(data['VirusName'], 'String');
     }
     return obj;
   }
 
   /**
    * Name of the file containing the virus
-   * @member {String} fileName
+   * @member {String} FileName
    */
-  exports.prototype.fileName = undefined;
+  exports.prototype.FileName = undefined;
 
   /**
    * Name of the virus that was found
-   * @member {String} virusName
+   * @member {String} VirusName
    */
-  exports.prototype.virusName = undefined;
+  exports.prototype.VirusName = undefined;
 
 
   return exports;

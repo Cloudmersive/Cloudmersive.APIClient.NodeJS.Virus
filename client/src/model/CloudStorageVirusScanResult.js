@@ -33,7 +33,7 @@
   /**
    * The CloudStorageVirusScanResult model module.
    * @module model/CloudStorageVirusScanResult
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,152 +56,152 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('Successful'))
-        obj.successful = ApiClient.convertToType(data['Successful'], 'Boolean');
+        obj.Successful = ApiClient.convertToType(data['Successful'], 'Boolean');
       if (data.hasOwnProperty('CleanResult'))
-        obj.cleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
+        obj.CleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
       if (data.hasOwnProperty('FoundViruses'))
-        obj.foundViruses = ApiClient.convertToType(data['FoundViruses'], [CloudStorageVirusFound]);
+        obj.FoundViruses = ApiClient.convertToType(data['FoundViruses'], [CloudStorageVirusFound]);
       if (data.hasOwnProperty('ErrorDetailedDescription'))
-        obj.errorDetailedDescription = ApiClient.convertToType(data['ErrorDetailedDescription'], 'String');
+        obj.ErrorDetailedDescription = ApiClient.convertToType(data['ErrorDetailedDescription'], 'String');
       if (data.hasOwnProperty('FileSize'))
-        obj.fileSize = ApiClient.convertToType(data['FileSize'], 'Number');
+        obj.FileSize = ApiClient.convertToType(data['FileSize'], 'Number');
       if (data.hasOwnProperty('ContainsContentModerationRejection'))
-        obj.containsContentModerationRejection = ApiClient.convertToType(data['ContainsContentModerationRejection'], 'Boolean');
+        obj.ContainsContentModerationRejection = ApiClient.convertToType(data['ContainsContentModerationRejection'], 'Boolean');
       if (data.hasOwnProperty('ContainsExecutable'))
-        obj.containsExecutable = ApiClient.convertToType(data['ContainsExecutable'], 'Boolean');
+        obj.ContainsExecutable = ApiClient.convertToType(data['ContainsExecutable'], 'Boolean');
       if (data.hasOwnProperty('ContainsInvalidFile'))
-        obj.containsInvalidFile = ApiClient.convertToType(data['ContainsInvalidFile'], 'Boolean');
+        obj.ContainsInvalidFile = ApiClient.convertToType(data['ContainsInvalidFile'], 'Boolean');
       if (data.hasOwnProperty('ContainsScript'))
-        obj.containsScript = ApiClient.convertToType(data['ContainsScript'], 'Boolean');
+        obj.ContainsScript = ApiClient.convertToType(data['ContainsScript'], 'Boolean');
       if (data.hasOwnProperty('ContainsPasswordProtectedFile'))
-        obj.containsPasswordProtectedFile = ApiClient.convertToType(data['ContainsPasswordProtectedFile'], 'Boolean');
+        obj.ContainsPasswordProtectedFile = ApiClient.convertToType(data['ContainsPasswordProtectedFile'], 'Boolean');
       if (data.hasOwnProperty('ContainsRestrictedFileFormat'))
-        obj.containsRestrictedFileFormat = ApiClient.convertToType(data['ContainsRestrictedFileFormat'], 'Boolean');
+        obj.ContainsRestrictedFileFormat = ApiClient.convertToType(data['ContainsRestrictedFileFormat'], 'Boolean');
       if (data.hasOwnProperty('ContainsMacros'))
-        obj.containsMacros = ApiClient.convertToType(data['ContainsMacros'], 'Boolean');
+        obj.ContainsMacros = ApiClient.convertToType(data['ContainsMacros'], 'Boolean');
       if (data.hasOwnProperty('ContainsXmlExternalEntities'))
-        obj.containsXmlExternalEntities = ApiClient.convertToType(data['ContainsXmlExternalEntities'], 'Boolean');
+        obj.ContainsXmlExternalEntities = ApiClient.convertToType(data['ContainsXmlExternalEntities'], 'Boolean');
       if (data.hasOwnProperty('ContainsInsecureDeserialization'))
-        obj.containsInsecureDeserialization = ApiClient.convertToType(data['ContainsInsecureDeserialization'], 'Boolean');
+        obj.ContainsInsecureDeserialization = ApiClient.convertToType(data['ContainsInsecureDeserialization'], 'Boolean');
       if (data.hasOwnProperty('ContainsHtml'))
-        obj.containsHtml = ApiClient.convertToType(data['ContainsHtml'], 'Boolean');
+        obj.ContainsHtml = ApiClient.convertToType(data['ContainsHtml'], 'Boolean');
       if (data.hasOwnProperty('ContainsUnsafeArchive'))
-        obj.containsUnsafeArchive = ApiClient.convertToType(data['ContainsUnsafeArchive'], 'Boolean');
+        obj.ContainsUnsafeArchive = ApiClient.convertToType(data['ContainsUnsafeArchive'], 'Boolean');
       if (data.hasOwnProperty('ContainsOleEmbeddedObject'))
-        obj.containsOleEmbeddedObject = ApiClient.convertToType(data['ContainsOleEmbeddedObject'], 'Boolean');
+        obj.ContainsOleEmbeddedObject = ApiClient.convertToType(data['ContainsOleEmbeddedObject'], 'Boolean');
       if (data.hasOwnProperty('VerifiedFileFormat'))
-        obj.verifiedFileFormat = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
+        obj.VerifiedFileFormat = ApiClient.convertToType(data['VerifiedFileFormat'], 'String');
     }
     return obj;
   }
 
   /**
    * True if the operation of retrieving the file, and scanning it were successfully completed, false if the file could not be downloaded from cloud storage, or if the file could not be scanned.  Note that successful completion does not mean the file is clean; for the output of the virus scanning operation itself, use the CleanResult and FoundViruses parameters.
-   * @member {Boolean} successful
+   * @member {Boolean} Successful
    */
-  exports.prototype.successful = undefined;
+  exports.prototype.Successful = undefined;
 
   /**
    * True if the scan contained no viruses, false otherwise
-   * @member {Boolean} cleanResult
+   * @member {Boolean} CleanResult
    */
-  exports.prototype.cleanResult = undefined;
+  exports.prototype.CleanResult = undefined;
 
   /**
    * Array of viruses found, if any
-   * @member {Array.<module:model/CloudStorageVirusFound>} foundViruses
+   * @member {Array.<module:model/CloudStorageVirusFound>} FoundViruses
    */
-  exports.prototype.foundViruses = undefined;
+  exports.prototype.FoundViruses = undefined;
 
   /**
    * Detailed error message if the operation was not successful
-   * @member {String} errorDetailedDescription
+   * @member {String} ErrorDetailedDescription
    */
-  exports.prototype.errorDetailedDescription = undefined;
+  exports.prototype.ErrorDetailedDescription = undefined;
 
   /**
    * Size in bytes of the file that was retrieved and scanned
-   * @member {Number} fileSize
+   * @member {Number} FileSize
    */
-  exports.prototype.fileSize = undefined;
+  exports.prototype.FileSize = undefined;
 
   /**
    * Set to true when using NSFW Content Moderation in the Cloudmersive Storage Protect product (disabled by default)
-   * @member {Boolean} containsContentModerationRejection
+   * @member {Boolean} ContainsContentModerationRejection
    */
-  exports.prototype.containsContentModerationRejection = undefined;
+  exports.prototype.ContainsContentModerationRejection = undefined;
 
   /**
    * True if the scan contained an executable (application code), which can be a significant risk factor
-   * @member {Boolean} containsExecutable
+   * @member {Boolean} ContainsExecutable
    */
-  exports.prototype.containsExecutable = undefined;
+  exports.prototype.ContainsExecutable = undefined;
 
   /**
    * True if the scan contained an invalid file (such as a PDF that is not a valid PDF, Word Document that is not a valid Word Document, etc.), which can be a significant risk factor
-   * @member {Boolean} containsInvalidFile
+   * @member {Boolean} ContainsInvalidFile
    */
-  exports.prototype.containsInvalidFile = undefined;
+  exports.prototype.ContainsInvalidFile = undefined;
 
   /**
    * True if the scan contained a script (such as a PHP script, Python script, etc.) which can be a significant risk factor
-   * @member {Boolean} containsScript
+   * @member {Boolean} ContainsScript
    */
-  exports.prototype.containsScript = undefined;
+  exports.prototype.ContainsScript = undefined;
 
   /**
    * True if the scan contained a password protected or encrypted file, which can be a significant risk factor
-   * @member {Boolean} containsPasswordProtectedFile
+   * @member {Boolean} ContainsPasswordProtectedFile
    */
-  exports.prototype.containsPasswordProtectedFile = undefined;
+  exports.prototype.ContainsPasswordProtectedFile = undefined;
 
   /**
    * True if the uploaded file is of a type that is not allowed based on the optional restrictFileTypes parameter, false otherwise; if restrictFileTypes is not set, this will always be false
-   * @member {Boolean} containsRestrictedFileFormat
+   * @member {Boolean} ContainsRestrictedFileFormat
    */
-  exports.prototype.containsRestrictedFileFormat = undefined;
+  exports.prototype.ContainsRestrictedFileFormat = undefined;
 
   /**
    * True if the uploaded file contains embedded Macros of other embedded threats within the document, which can be a significant risk factor
-   * @member {Boolean} containsMacros
+   * @member {Boolean} ContainsMacros
    */
-  exports.prototype.containsMacros = undefined;
+  exports.prototype.ContainsMacros = undefined;
 
   /**
    * True if the uploaded file contains embedded XML External Entity threats of other embedded threats within the document, which can be a significant risk factor
-   * @member {Boolean} containsXmlExternalEntities
+   * @member {Boolean} ContainsXmlExternalEntities
    */
-  exports.prototype.containsXmlExternalEntities = undefined;
+  exports.prototype.ContainsXmlExternalEntities = undefined;
 
   /**
    * True if the uploaded file contains embedded Insecure Deserialization threats of other embedded threats within the document, which can be a significant risk factor
-   * @member {Boolean} containsInsecureDeserialization
+   * @member {Boolean} ContainsInsecureDeserialization
    */
-  exports.prototype.containsInsecureDeserialization = undefined;
+  exports.prototype.ContainsInsecureDeserialization = undefined;
 
   /**
    * True if the uploaded file contains HTML, which can be a significant risk factor
-   * @member {Boolean} containsHtml
+   * @member {Boolean} ContainsHtml
    */
-  exports.prototype.containsHtml = undefined;
+  exports.prototype.ContainsHtml = undefined;
 
   /**
    * True if the uploaded file contains unsafe archive (e.g. zip) content, such as a Zip Bomb, or other configurations of a zip file that could lead to an unsafe extraction
-   * @member {Boolean} containsUnsafeArchive
+   * @member {Boolean} ContainsUnsafeArchive
    */
-  exports.prototype.containsUnsafeArchive = undefined;
+  exports.prototype.ContainsUnsafeArchive = undefined;
 
   /**
    * True if the uploaded file contains an OLE embedded object, which can be a significant risk factor
-   * @member {Boolean} containsOleEmbeddedObject
+   * @member {Boolean} ContainsOleEmbeddedObject
    */
-  exports.prototype.containsOleEmbeddedObject = undefined;
+  exports.prototype.ContainsOleEmbeddedObject = undefined;
 
   /**
    * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
-   * @member {String} verifiedFileFormat
+   * @member {String} VerifiedFileFormat
    */
-  exports.prototype.verifiedFileFormat = undefined;
+  exports.prototype.VerifiedFileFormat = undefined;
 
 
   return exports;

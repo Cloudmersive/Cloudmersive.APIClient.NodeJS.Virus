@@ -33,7 +33,7 @@
   /**
    * The WebsiteScanResult model module.
    * @module model/WebsiteScanResult
-   * @version 1.3.1
+   * @version 1.4.0
    */
 
   /**
@@ -56,45 +56,45 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('CleanResult'))
-        obj.cleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
+        obj.CleanResult = ApiClient.convertToType(data['CleanResult'], 'Boolean');
       if (data.hasOwnProperty('WebsiteThreatType'))
-        obj.websiteThreatType = ApiClient.convertToType(data['WebsiteThreatType'], 'String');
+        obj.WebsiteThreatType = ApiClient.convertToType(data['WebsiteThreatType'], 'String');
       if (data.hasOwnProperty('FoundViruses'))
-        obj.foundViruses = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
+        obj.FoundViruses = ApiClient.convertToType(data['FoundViruses'], [VirusFound]);
       if (data.hasOwnProperty('WebsiteHttpResponseCode'))
-        obj.websiteHttpResponseCode = ApiClient.convertToType(data['WebsiteHttpResponseCode'], 'Number');
+        obj.WebsiteHttpResponseCode = ApiClient.convertToType(data['WebsiteHttpResponseCode'], 'Number');
     }
     return obj;
   }
 
   /**
    * True if the scan contained no threats, false otherwise
-   * @member {Boolean} cleanResult
+   * @member {Boolean} CleanResult
    */
-  exports.prototype.cleanResult = undefined;
+  exports.prototype.CleanResult = undefined;
 
   /**
    * Type of threat returned; can be None, Malware, ForcedDownload or Phishing
-   * @member {module:model/WebsiteScanResult.WebsiteThreatTypeEnum} websiteThreatType
+   * @member {module:model/WebsiteScanResult.WebsiteThreatTypeEnum} WebsiteThreatType
    */
-  exports.prototype.websiteThreatType = undefined;
+  exports.prototype.WebsiteThreatType = undefined;
 
   /**
    * Array of viruses found, if any
-   * @member {Array.<module:model/VirusFound>} foundViruses
+   * @member {Array.<module:model/VirusFound>} FoundViruses
    */
-  exports.prototype.foundViruses = undefined;
+  exports.prototype.FoundViruses = undefined;
 
   /**
    * The remote server URL HTTP reasponse code; useful for debugging issues with scanning; typically if the remote server returns a 200 or 300-series code this means a successful response, while a 400 or 500 series code would represent an error returned from the remote server for the provided URL.
-   * @member {Number} websiteHttpResponseCode
+   * @member {Number} WebsiteHttpResponseCode
    */
-  exports.prototype.websiteHttpResponseCode = undefined;
+  exports.prototype.WebsiteHttpResponseCode = undefined;
 
 
 
   /**
-   * Allowed values for the <code>websiteThreatType</code> property.
+   * Allowed values for the <code>WebsiteThreatType</code> property.
    * @enum {String}
    * @readonly
    */
@@ -103,31 +103,31 @@
      * value: "None"
      * @const
      */
-    none: "None",
+    None: "None",
 
     /**
      * value: "Malware"
      * @const
      */
-    malware: "Malware",
+    Malware: "Malware",
 
     /**
      * value: "Phishing"
      * @const
      */
-    phishing: "Phishing",
+    Phishing: "Phishing",
 
     /**
      * value: "ForcedDownload"
      * @const
      */
-    forcedDownload: "ForcedDownload",
+    ForcedDownload: "ForcedDownload",
 
     /**
      * value: "UnableToConnect"
      * @const
      */
-    unableToConnect: "UnableToConnect"
+    UnableToConnect: "UnableToConnect"
   };
 
   return exports;
